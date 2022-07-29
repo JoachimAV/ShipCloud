@@ -1,0 +1,30 @@
+{
+  "id": "4d4b9bd5-436d-47fd-9a9d-b4da343c07c9",
+  "name": "ShipCloud2Bc",
+  "publisher": "Ambiente Virtual",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "Shipcloud Integration to BC365",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "target": "Cloud",
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "features": ["TranslationFile"],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "idRanges": [
+    {
+      "from": 61000,
+      "to": 61100
+    }
+  ],
+  "runtime": "9.0"
+}

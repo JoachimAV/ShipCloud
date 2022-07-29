@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Test",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Test",
+            "startupObjectId": 50102,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "78d89cc7-671d-4de0-953a-125f2cceb5fd",
+            "schemaUpdateMode": "ForceSync"
+        },
+        {
+            "name": "Sandbox",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "AurosanSandbox",
+            "startupObjectId": 50102,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "78d89cc7-671d-4de0-953a-125f2cceb5fd",
+            "schemaUpdateMode": "ForceSync"
+        }
+    ]
+}
