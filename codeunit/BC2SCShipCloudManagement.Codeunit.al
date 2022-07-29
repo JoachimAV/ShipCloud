@@ -1,7 +1,7 @@
 /// <summary>
 /// Codeunit xtCommerce Management (ID 61000).
 /// </summary>
-codeunit 61000 "ShipCloud Management"
+codeunit 61000 "BC2SC_ShipCloud Management"
 {
     procedure SendRequestFromServOrder()
     var
