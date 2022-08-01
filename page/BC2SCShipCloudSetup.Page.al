@@ -4,6 +4,8 @@
 page 61000 "BC2SC_ShipCloud Setup"
 {
     Caption = 'ShipCloud Setup';
+    ApplicationArea = All;
+    UsageCategory = Administration;
     PageType = Card;
     SourceTable = "BC2SC_ShipCloud Setup";
 
@@ -21,7 +23,31 @@ page 61000 "BC2SC_ShipCloud Setup"
                 {
                     ApplicationArea = All;
                 }
+                field(Debug; Rec.Debug)
+                {
+                    ApplicationArea = All;
+                }
+            }
+            group(NoSeries)
+            {
+                field("Transport No. Series"; Rec."Transport No. Series")
+                {
+                    ApplicationArea = All;
+                }
+                field("Parcel No. Series"; Rec."Parcel No. Series")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        if not Rec.Get() Then begin
+            Rec.Init;
+            Rec."API Base URL" := 'https://api.shipcloud.io/v1/';
+            Rec.Insert(true);
+
+        end;
+    end;
 }

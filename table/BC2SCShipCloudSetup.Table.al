@@ -23,6 +23,20 @@ table 61000 "BC2SC_ShipCloud Setup"
             Caption = 'API Base URL';
             DataClassification = ToBeClassified;
         }
+        field(4; "Transport No. Series"; Code[20])
+        {
+            Caption = 'Transport No. Series';
+            TableRelation = "No. Series";
+        }
+        field(5; "Parcel No. Series"; Code[20])
+        {
+            Caption = 'Parcel No. Series';
+            TableRelation = "No. Series";
+        }
+        field(500; "Debug"; Boolean)
+        {
+            Caption = 'Debug';
+        }
     }
     keys
     {
