@@ -13,39 +13,49 @@ table 61001 "BC2SC_Transport Header"
         }
         field(2; "Ship-to Name"; Text[100])
         {
-            Caption = 'Ship-to Name';
+            Caption = 'Name';
         }
         field(3; "Ship-to Name 2"; Text[50])
         {
-            Caption = 'Ship-to Name 2';
+            Caption = 'Name 2';
         }
         field(4; "Ship-to Address"; Text[100])
         {
-            Caption = 'Ship-to Address';
+            Caption = 'Address';
         }
         field(5; "Ship-to Address 2"; Text[50])
         {
-            Caption = 'Ship-to Address 2';
+            Caption = 'Address 2';
         }
         field(6; "Ship-to Country/Region Code"; Code[10])
         {
-            Caption = 'Ship-to Country/Region Code';
+            Caption = 'Country/Region Code';
         }
         field(16; "Ship-to Post Code"; Code[20])
         {
-            Caption = 'Ship-to Post Code';
+            Caption = 'Post Code';
+            TableRelation = "Post Code" where("Country/Region Code" = Field("Ship-to Country/Region Code"));
+            TestTableRelation = False;
+            ValidateTableRelation = False;
+            trigger OnValidate()
+            var
+                PostCode: Record "Post Code";
+            begin
+                if Postcode.get(Rec."Ship-to Country/Region Code", Rec."Ship-to Post Code") then
+                    "Ship-to City" := PostCode.City;
+            end;
         }
         field(17; "Ship-to City"; Text[30])
         {
-            Caption = 'Ship-to City';
+            Caption = 'City';
         }
         field(18; "Ship-to County"; Text[30])
         {
-            Caption = 'Ship-to County';
+            Caption = 'County';
         }
         field(19; "Ship-to Contact"; Text[50])
         {
-            Caption = 'Ship-to Contact';
+            Caption = 'Contact';
         }
         field(20; "Customer No."; Code[20])
         {
@@ -56,14 +66,16 @@ table 61001 "BC2SC_Transport Header"
             var
                 Customer: Record Customer;
             begin
-                Rec.TestField("Source Document Type", Rec."Source Document Type"::Manual);
-
                 Customer.get("Customer No.");
                 Rec."Source Document Type" := Rec."Source Document Type"::Manual;
                 Rec."Ship-to Name" := Customer.Name;
                 Rec."Ship-to Name 2" := Customer."Name 2";
-                Rec."Ship-to Address" := Customer.Address;
-                Rec."Ship-from Address 2" := Customer."Address 2";
+                if (Customer.Address = '') and (Customer."Address 2" <> '') then begin
+                    Rec."Ship-to Address" := Customer."Address 2";
+                end else begin
+                    Rec."Ship-to Address" := Customer.Address;
+                    Rec."Ship-to Address 2" := Customer."Address 2";
+                end;
                 Rec."Ship-to Country/Region Code" := Customer."Country/Region Code";
                 Rec."Ship-to Post Code" := Customer."Post Code";
                 Rec."Ship-to City" := Customer.City;
@@ -75,62 +87,10 @@ table 61001 "BC2SC_Transport Header"
                 Rec."Shipment Method Code" := Customer."Shipment Method Code";
             end;
         }
-        field(21; "Sell-to / Buy-from Name"; Text[50])
-        {
-            Caption = 'Sell-to / Buy-from Name';
-        }
-        field(30; "Ship-from Code"; Code[10])
-        {
-            Caption = 'Ship-from Code';
-        }
-        field(31; "Ship-from Name"; Text[100])
-        {
-            Caption = 'Ship-from Name';
-        }
-        field(32; "Ship-from Name 2"; Text[50])
-        {
-            Caption = 'Ship-from Name 2';
-            DataClassification = ToBeClassified;
-        }
-        field(33; "Ship-from Address"; Text[100])
-        {
-            Caption = 'Ship-from Address';
-            DataClassification = ToBeClassified;
-        }
-        field(34; "Ship-from Address 2"; Text[50])
-        {
-            Caption = 'Ship-from Address 2';
-            DataClassification = ToBeClassified;
-        }
-        field(35; "Ship-from Country/Region Code"; Code[10])
-        {
-            Caption = 'Ship-from Country/Region Code';
-            DataClassification = ToBeClassified;
-        }
-        field(36; "Ship-from Post Code"; Code[20])
-        {
-            Caption = 'Ship-from Post Code';
-            DataClassification = ToBeClassified;
-        }
-        field(37; "Ship-from City"; Text[30])
-        {
-            Caption = 'Ship-from City';
-            DataClassification = ToBeClassified;
-        }
-        field(38; "Ship-from County"; Text[30])
-        {
-            Caption = 'Ship-from County';
-            DataClassification = ToBeClassified;
-        }
-        field(39; "Ship-from Contact"; Text[50])
-        {
-            Caption = 'Ship-from Contact';
-            DataClassification = ToBeClassified;
-        }
+
         field(40; "Shipment Value (LCY) (insur.)"; Decimal)
         {
             Caption = 'Shipment Value (LCY) (insur.)';
-            DataClassification = ToBeClassified;
         }
         field(80; "Shipping Agent Code"; Code[10])
         {
@@ -162,6 +122,14 @@ table 61001 "BC2SC_Transport Header"
         field(120; "Status"; Enum BC2SC_TransportStatus)
         {
             Caption = 'Status';
+        }
+        field(121; "Transport Document Type"; enum BC2SC_Direction)
+        {
+            Caption = 'Transport Document Type';
+            trigger OnValidate()
+            begin
+                Rec.TestField("Source Document Type", Rec."Source Document Type"::Manual);
+            end;
         }
         field(200; "Source Document Type"; Enum BC2SC_TransportSourceDocType)
         {

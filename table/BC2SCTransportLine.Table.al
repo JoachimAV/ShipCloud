@@ -18,14 +18,22 @@ table 61002 "BC2SC_Transport Line"
         field(3; "Type"; Enum BC2SC_TransportLine_Type)
         {
             Caption = 'Type';
+            trigger OnValidate()
+            begin
+                CheckModifyAllowed();
+            end;
+
         }
         field(4; "No."; Code[20])
         {
             Caption = 'No.';
+            TableRelation = IF (Type = const(Item)) Item;
+
             trigger OnValidate()
             var
                 Item: Record Item;
             begin
+                CheckModifyAllowed();
                 Rec.TestField(Type, Rec.Type::Item);
                 Item.get("No.");
                 Rec.Description := Item.Description;
@@ -37,15 +45,30 @@ table 61002 "BC2SC_Transport Line"
         field(7; Description; Text[100])
         {
             Caption = 'Description';
+            trigger OnValidate()
+            begin
+                CheckModifyAllowed();
+            end;
+
         }
         field(8; "Description 2"; Text[50])
         {
             Caption = 'Description 2';
+            trigger OnValidate()
+            begin
+                CheckModifyAllowed();
+            end;
+
         }
         field(10; "Unit of Measure Code"; Code[10])
         {
             Caption = 'Unit of Measure Code';
-            DataClassification = ToBeClassified;
+            TableRelation = "Unit of Measure";
+            trigger OnValidate()
+            begin
+                CheckModifyAllowed();
+            end;
+
         }
 
         field(11; "Qty. per Unit of Measure"; Decimal)
@@ -57,15 +80,24 @@ table 61002 "BC2SC_Transport Line"
         {
             Caption = 'Quantity';
             trigger OnValidate()
+            var
+                ShipCloudSetup: Record "BC2SC_ShipCloud Setup";
             begin
+                CheckModifyAllowed();
+                ShipCloudSetup.get;
+                if ShipCloudSetup."Def. Qty. to Pack with Qty." then
+                    Rec.validate("Qty. to pack", Rec.Quantity);
                 Rec."Total Weight" := Rec."Weight per Unit" * Rec.Quantity;
             end;
         }
-        field(15; "Quantity (Base)"; Decimal)
-        {
-            Caption = 'Quantity (Base)';
-            DataClassification = ToBeClassified;
-        }
+        // field(15; "Quantity (Base)"; Decimal)
+        // {
+        //     Caption = 'Quantity (Base)';
+        //     trigger OnValidate()
+        //     begin
+        //         CheckModifyAllowed();
+        //     end;
+        // }
 
         field(16; "Weight per Unit"; Decimal)
         {
@@ -73,7 +105,15 @@ table 61002 "BC2SC_Transport Line"
         }
         field(17; "Total Weight"; Decimal)
         {
-            Caption = 'Total Weight';
+            Caption = 'Total Weight (to Pack)';
+            trigger OnValidate()
+            begin
+                CheckModifyAllowed();
+                if Rec."Total Weight" <> 0 then
+                    Rec."Weight per Unit" := Rec."Total Weight" / Rec."Qty. to pack"
+                else
+                    Rec."Weight per Unit" := 0;
+            end;
         }
         field(18; "Variant Code"; Code[10])
         {
@@ -82,8 +122,16 @@ table 61002 "BC2SC_Transport Line"
         field(20; "Parcel No."; Code[20])
         {
             Caption = 'Parcel No.';
-            Editable = false;
             TableRelation = BC2SC_Parcel;
+            Editable = false;
+
+            trigger OnLookup()
+            var
+                Parcel: Record BC2SC_Parcel;
+            begin
+                Parcel.get(Rec."Parcel No.");
+                Page.RunModal(page::"BC2SC_Parcel Card", Parcel);
+            end;
         }
         field(21; "Tracking No."; Text[50])
         {
@@ -94,6 +142,12 @@ table 61002 "BC2SC_Transport Line"
         field(30; "Qty. to pack"; Decimal)
         {
             Caption = 'Qty. to pack';
+            trigger OnValidate()
+
+            begin
+                CheckModifyAllowed();
+                Rec."Total Weight" := Rec."Weight per Unit" * Rec."Qty. to pack";
+            end;
         }
 
     }
@@ -104,4 +158,15 @@ table 61002 "BC2SC_Transport Line"
             Clustered = true;
         }
     }
+    trigger OnModify()
+    begin
+
+    end;
+    /// <summary>
+    /// CheckModifyAllowed.
+    /// </summary>
+    procedure CheckModifyAllowed()
+    begin
+        Testfield("Parcel No.", '');
+    end;
 }

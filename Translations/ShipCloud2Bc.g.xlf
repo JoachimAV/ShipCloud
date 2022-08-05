@@ -58,6 +58,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Parcel - Field Height - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1545523911 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Parcel - Field ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1545523911 - Field 1881551368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Length</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -123,10 +128,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 8696334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transp. when reg. Whse. Pick</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Cr. Transp. w. Reg. Whse. Pick - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 3367852563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transp. when Sales.-Post</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Cr. Transp. w. Sales.-Post - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 3857681581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transp. when Serv.-Post</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Cr. Transp. w. Serv.-Post - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3128493124 - Field 540986563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Debug</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Debug - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 2235207163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Def. Qty. to Pack with Qty.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Def. Qty. to Pack with Qty. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 3195097380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Def. Transport Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Def. Transport Item No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3128493124 - Field 4281651911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parcel No. Series</source>
@@ -168,103 +198,48 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Notification E-Mail - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 1871230159 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sell-to / Buy-from Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Sell-to / Buy-from Name - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 3273491881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Address</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Address - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 1621984743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Address 2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Address 2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 2721620338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from City</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from City - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 223363352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 2053038451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Contact</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Contact - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 2976553245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Country/Region Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Country/Region Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 2968702605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from County</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from County - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 2278276546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Name - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 3479775952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Name 2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Name 2 - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 2280200180 - Field 3036433224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-from Post Code</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-from Post Code - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2280200180 - Field 1187003046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Address</source>
+          <source>Address</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 1417792948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Address 2</source>
+          <source>Address 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 1981213637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to City</source>
+          <source>City</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 929198632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Contact</source>
+          <source>Contact</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 3354576322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Country/Region Code</source>
+          <source>Country/Region Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 187607738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to County</source>
+          <source>County</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Name</source>
+          <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 3261344115 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Name 2</source>
+          <source>Name 2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Name 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ship-to Post Code</source>
+          <source>Post Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Ship-to Post Code - Property Caption</note>
         </trans-unit>
@@ -307,6 +282,11 @@
           <source>Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 3294816496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport Document Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport Document Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 3001618318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Your Reference</source>
@@ -358,13 +338,8 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Line - Field Quantity - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1787484923 - Field 3179217921 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantity (Base)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Line - Field Quantity (Base) - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1787484923 - Field 582094086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total Weight</source>
+          <source>Total Weight (to Pack)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Line - Field Total Weight - Property Caption</note>
         </trans-unit>
@@ -398,6 +373,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Line - Field Weight per Unit - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3794112957 - Method 2134731924 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transport for Sales Order %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Event Mgt. - Method Sales-Post (Yes/No)_OnBeforeConfirmSalesPost - NamedType lbl001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3794112957 - Method 2472053430 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transport for Sales Order %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Event Mgt. - Method Sales-Post + Print_OnBeforeConfirmPost - NamedType lbl001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3794112957 - Method 315763329 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transport for Service Order %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Event Mgt. - Method Service-Post (Yes/No)_OnBeforeConfirmServPost - NamedType lbl001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3794112957 - Method 3678937353 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transport for Service Order %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Event Mgt. - Method Service-Post+Print_OnBeforeConfirmPost - NamedType lbl001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3794112957 - Method 2227397470 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Transport for Sales Order %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Event Mgt. - Method Whse.-Act.-Post (Yes/No)_OnBeforeConfirmPost - NamedType lbl001</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 3859410026 - NamedType 1044704471" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -412,6 +412,21 @@
           <source>%1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromWhseActHeader - NamedType YourRefText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 2505523563 - NamedType 2138038531" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Carrier Tracking for parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickupRequest - NamedType LblTrackingCarrier</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 2505523563 - NamedType 197111706" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking for parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickupRequest - NamedType LblTrackingUrl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 2505523563 - NamedType 1723079833" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label URL Parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickupRequest - NamedType LblLabelUrl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 2729335617 - NamedType 2138038531" size-unit="char" translate="yes" xml:space="preserve">
           <source>Carrier Tracking for parcel %1</source>
@@ -438,6 +453,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Packagings - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2835145699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BC2SC_Parcel Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Parcel Card - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2726427665 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_Parcel List</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -448,6 +468,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 1100141636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Defaults</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control Defaults - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 8696334 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates Transport Documents automatically when Warehouse Pick is registered.\If there is an document created manually, nothing happens</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control Cr. Transp. w. Reg. Whse. Pick - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 3367852563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates Transport Documents automatically when Sales Order is posted.\If there is an document created manually, nothing happens</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control Cr. Transp. w. Sales.-Post - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 3857681581 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates Transport Documents automatically when Service Order is posted.\If there is an document created manually, nothing happens</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control Cr. Transp. w. Serv.-Post - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 3195097380 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This item is inserted automatically to Transports, when no Items in Documents exists.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control Def. Transport Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 2295453870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control NoSeries - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3010349837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -457,6 +512,16 @@
           <source>Document Reference</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Control DocumentRef - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 991176927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancel Shipcloud Transport</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CancelTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 991176927 - Method 1377591017 - NamedType 659758578" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancel ShipCloud Transport?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CancelTransport - Method OnAction - NamedType ConfMsg003</note>
         </trans-unit>
         <trans-unit id="Page 3010349837 - Action 2497658759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Parcel</source>
@@ -483,10 +548,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Lines - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3459893926 - Action 227665064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Split line</source>
+        <trans-unit id="Page 3459893926 - Action 834481767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parcel Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Lines - Action SplitLine - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Lines - Action OpenParcel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 801369431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_Transport List</source>
@@ -513,6 +578,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Sales Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg003</note>
         </trans-unit>
+        <trans-unit id="PageExtension 4240524421 - Action 3070869345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4240524421">
+          <source>Create Transport</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Pick - Action CreateTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4240524421 - Action 3070869345 - Method 1377591017 - NamedType 3679332640" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4240524421">
+          <source>Create Transport for this Warehouse Pick Document?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Pick - Action CreateTransport - Method OnAction - NamedType ConfMsg001</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4240524421 - Action 3070869345 - Method 1377591017 - NamedType 22061961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4240524421">
+          <source>Transport %1 created. Open Document?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Pick - Action CreateTransport - Method OnAction - NamedType ConfMsg002</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4240524421 - Action 3070869345 - Method 1377591017 - NamedType 659758578" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4240524421">
+          <source>Transport %1 for this Document exists. Create a new Transport Document?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Inventory Pick - Action CreateTransport - Method OnAction - NamedType ConfMsg003</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1192289348 - Action 16982117 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1192289348">
           <source>View or edit serial and lot numbers for the selected item. This action is available only for lines that contain an item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -522,6 +607,16 @@
           <source>Item &amp;Tracking Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Invt. Pick Subform - Action BC2SC_ItemTrackingLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 21747839 - Control 196092146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 21747839">
+          <source>No. of created transports to customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Hist. Sell-to FactBox - Control BC2SC_Qty. Transports - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 21747839 - Control 196092146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 21747839">
+          <source>Qty. Transports</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Hist. Sell-to FactBox - Control BC2SC_Qty. Transports - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2145436509 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Create Transport</source>
@@ -563,15 +658,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Warehouse Pick - Action CreateTransport - Method OnAction - NamedType ConfMsg003</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3227203780 - Field 196092146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Qty. Transports</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension BC2SC_Customer - Field BC2SC_Qty. Transports - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1172549857 - Field 2664764219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2271291437">
           <source>Shipcloud Agent Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension BC2SC_ShippingAgent - Field BC2SC_Shipcloud Agent Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Enum 3033717497 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
+        <trans-unit id="Enum 2629604923 - EnumValue 3223440110 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pickup</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportCreatedDocType - EnumValue   - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_Direction - EnumValue Return - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2629604923 - EnumValue 538715564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_Direction - EnumValue Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3033717497 - EnumValue 1192395785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Header</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportCreatedDocType - EnumValue Sales Header - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3033717497 - EnumValue 3610197182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Service Header</source>
@@ -582,11 +692,6 @@
           <source>Whse.Act.Header</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportCreatedDocType - EnumValue Whse.Act.Header - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Enum 3270758482 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source> </source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportLine_Type - EnumValue   - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3270758482 - EnumValue 3276313895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item</source>
@@ -622,6 +727,11 @@
           <source>Sended</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportStatus - EnumValue Sended - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 3660108612 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ShipCloud Admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BC2SC_ShipCloudAdmin - Property Caption</note>
         </trans-unit>
       </group>
     </body>

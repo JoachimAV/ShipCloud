@@ -18,6 +18,10 @@ page 61003 "BC2SC_Transport Card"
                     ApplicationArea = All;
                     Editable = False;
                 }
+                field(Direction; Rec."Transport Document Type")
+                {
+                    ApplicationArea = All;
+                }
                 field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
@@ -38,6 +42,10 @@ page 61003 "BC2SC_Transport Card"
                     ShowMandatory = True;
                 }
                 field("Ship-to Address 2"; Rec."Ship-to Address 2")
+                {
+                    ApplicationArea = All;
+                }
+                field("Ship-to Country/Region Code"; Rec."Ship-to Country/Region Code")
                 {
                     ApplicationArea = All;
                 }
@@ -149,6 +157,20 @@ page 61003 "BC2SC_Transport Card"
                 begin
                     if Confirm(ConfMsg002, True) then
                         ShipCloudMgt.SendTransport(Rec);
+                end;
+            }
+            action(CancelTransport)
+            {
+                ApplicationArea = All;
+                Caption = 'Cancel Shipcloud Transport';
+                Image = Cancel;
+                trigger OnAction()
+                var
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+                    ConfMsg003: label 'Cancel ShipCloud Transport?';
+                begin
+                    if Confirm(ConfMsg003, false) then
+                        ShipCloudMgt.CancelTransport(Rec);
                 end;
             }
         }

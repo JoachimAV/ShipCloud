@@ -37,6 +37,28 @@ table 61000 "BC2SC_ShipCloud Setup"
         {
             Caption = 'Debug';
         }
+        field(10; "Def. Qty. to Pack with Qty."; Boolean)
+        {
+            Caption = 'Def. Qty. to Pack with Qty.';
+        }
+
+        field(11; "Def. Transport Item No."; Code[20])
+        {
+            Caption = 'Def. Transport Item No.';
+            TableRelation = Item;
+        }
+        field(15; "Cr. Transp. w. Reg. Whse. Pick"; Boolean)
+        {
+            Caption = 'Create Transp. when reg. Whse. Pick';
+        }
+        field(16; "Cr. Transp. w. Serv.-Post"; Boolean)
+        {
+            Caption = 'Create Transp. when Serv.-Post';
+        }
+        field(18; "Cr. Transp. w. Sales.-Post"; Boolean)
+        {
+            Caption = 'Create Transp. when Sales.-Post';
+        }
     }
     keys
     {

@@ -6,6 +6,7 @@ page 61004 "BC2SC_Transport Lines"
     Caption = 'BC2SC_Transport Lines';
     PageType = ListPart;
     SourceTable = "BC2SC_Transport Line";
+    AutoSplitKey = True;
 
     layout
     {
@@ -75,17 +76,32 @@ page 61004 "BC2SC_Transport Lines"
     {
         area(Processing)
         {
-            action(SplitLine)
+            // action(SplitLine)
+            // {
+            //     ApplicationArea = All;
+            //     ToolTip = 'Split line';
+            //     Image = Splitlines;
+            //     trigger OnAction()
+            //     begin
+            //         //Todo: Zeile splitten
+            //         message('Fehlt noch');
+            //     end;
+            // }
+
+            action(OpenParcel)
             {
+                Caption = 'Parcel Card';
                 ApplicationArea = All;
-                ToolTip = 'Split line';
-                Image = Splitlines;
+                Image = Shipment;
                 trigger OnAction()
+                var
+                    Parcel: record BC2SC_Parcel;
                 begin
-                    //Todo: Zeile splitten
-                    message('Fehlt noch');
+                    Parcel.get(Rec."Parcel No.");
+                    Page.RunModal(Page::"BC2SC_Parcel Card", Parcel);
                 end;
             }
+
         }
     }
 }

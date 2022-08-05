@@ -12,6 +12,8 @@ table 61003 BC2SC_Parcel
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
+
+            Editable = false;
         }
         field(2; "Transport No."; Code[20])
         {
@@ -21,6 +23,8 @@ table 61003 BC2SC_Parcel
         field(7; "Packaging Code"; Code[10])
         {
             Caption = 'Packaging Code';
+            TableRelation = BC2SC_Packaging;
+
             trigger OnValidate()
             var
                 Packaging: Record BC2SC_Packaging;
@@ -73,6 +77,11 @@ table 61003 BC2SC_Parcel
         field(31; "Price"; Decimal)
         {
             Caption = 'Price';
+        }
+        field(35; "ID"; Text[50])
+        {
+            Caption = 'ID';
+            editable = false;
         }
     }
     keys

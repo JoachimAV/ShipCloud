@@ -15,6 +15,7 @@ page 61000 "BC2SC_ShipCloud Setup"
         {
             group(General)
             {
+                Caption = 'General';
                 field("API Base URL"; Rec."API Base URL")
                 {
                     ApplicationArea = All;
@@ -30,6 +31,7 @@ page 61000 "BC2SC_ShipCloud Setup"
             }
             group(NoSeries)
             {
+                caption = 'No. Series';
                 field("Transport No. Series"; Rec."Transport No. Series")
                 {
                     ApplicationArea = All;
@@ -37,6 +39,34 @@ page 61000 "BC2SC_ShipCloud Setup"
                 field("Parcel No. Series"; Rec."Parcel No. Series")
                 {
                     ApplicationArea = All;
+                }
+            }
+            group(Defaults)
+            {
+                Caption = 'Defaults';
+                field("Def. Qty. to Pack with Qty."; Rec."Def. Qty. to Pack with Qty.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Def. Transport Item No."; Rec."Def. Transport Item No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'This item is inserted automatically to Transports, when no Items in Documents exists.';
+                }
+                field("Cr. Transp. w. Reg. Whse. Pick"; Rec."Cr. Transp. w. Reg. Whse. Pick")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Creates Transport Documents automatically when Warehouse Pick is registered.\If there is an document created manually, nothing happens';
+                }
+                field("Cr. Transp. w. Sales.-Post"; Rec."Cr. Transp. w. Sales.-Post")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Creates Transport Documents automatically when Sales Order is posted.\If there is an document created manually, nothing happens';
+                }
+                field("Cr. Transp. w. Serv.-Post"; Rec."Cr. Transp. w. Serv.-Post")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Creates Transport Documents automatically when Service Order is posted.\If there is an document created manually, nothing happens';
                 }
             }
         }

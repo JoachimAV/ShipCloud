@@ -4,11 +4,6 @@
 enum 61000 BC2SC_TransportLine_Type
 {
     Extensible = true;
-
-    value(0; " ")
-    {
-        Caption = ' ';
-    }
     value(1; Item)
     {
         Caption = 'Item';

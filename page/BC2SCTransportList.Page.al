@@ -9,6 +9,7 @@ page 61002 "BC2SC_Transport List"
     SourceTable = "BC2SC_Transport Header";
     UsageCategory = Lists;
     CardPageId = 61003;
+    AutoSplitKey = True;
 
     layout
     {
@@ -20,40 +21,41 @@ page 61002 "BC2SC_Transport List"
                 {
                     ApplicationArea = All;
                 }
-                field("Ship-from Name"; Rec."Ship-from Name")
+                field(Direction; Rec."Transport Document Type")
                 {
                     ApplicationArea = All;
-                    Visible = False;
                 }
-                field("Ship-from Name 2"; Rec."Ship-from Name 2")
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
-                    Visible = False;
                 }
-                field("Ship-from Address"; Rec."Ship-from Address")
+                Field("Ship-to Name"; Rec."Ship-to Name")
                 {
                     ApplicationArea = All;
-                    Visible = False;
                 }
-                field("Ship-from Address 2"; Rec."Ship-from Address 2")
+                field("Ship-to Name 2"; Rec."Ship-to Name 2")
                 {
+                    Visible = false;
                     ApplicationArea = All;
-                    Visible = False;
                 }
-                field("Ship-from Post Code"; Rec."Ship-from Post Code")
+                field("Ship-to Address"; Rec."Ship-to Address")
                 {
                     ApplicationArea = All;
-                    Visible = False;
                 }
-                field("Ship-from Country/Region Code"; Rec."Ship-from Country/Region Code")
+                field("Ship-to Address 2"; Rec."Ship-to Address 2")
                 {
                     ApplicationArea = All;
-                    Visible = False;
+                    Visible = false;
+                }
+
+                field("Ship-to Post Code"; Rec."Ship-to Post Code")
+                {
+                    ApplicationArea = All;
                 }
                 field("Ship-to City"; Rec."Ship-to City")
                 {
                     ApplicationArea = All;
-                    Visible = False;
+                    Visible = True;
                 }
                 field("Shipment Method Code"; Rec."Shipment Method Code")
                 {
