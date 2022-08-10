@@ -102,4 +102,21 @@ table 61003 BC2SC_Parcel
             "No." := NoSeriesMgt.GetNextNo(ShipCloudSetup."Parcel No. Series", today, true);
         end;
     end;
+
+    trigger OnDelete()
+    var
+        TransportHeader: Record "BC2SC_Transport Header";
+        TransportLine: record "BC2SC_Transport Line";
+    //ShipCloudSetup: Record "BC2SC_ShipCloud Setup";
+    begin
+        Testfield("Tracking No.", '');
+        TransportHeader.get("Transport No.");
+        TransportHeader.TestField(Status, TransportHeader.Status::Open);
+        transportline.setrange("Transport No.", Rec."Transport No.");
+        TransportLine.setrange("Parcel No.", Rec."No.");
+        TransportLine.ModifyAll("Parcel No.", '', false);
+        //ShipCloudSetup.get;
+        //if ShipCloudSetup."Def. Qty. to Pack with Qty." then
+
+    end;
 }

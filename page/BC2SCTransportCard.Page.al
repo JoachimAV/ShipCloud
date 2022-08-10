@@ -109,6 +109,27 @@ page 61003 "BC2SC_Transport Card"
                 {
                     ApplicationArea = All;
                 }
+                field("Created at"; rec."Created at")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+                field("Created from"; rec."Created from")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+                field("Transport sendet at"; rec."Transport sendet at")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+
+                field("Transport sendet from"; rec."Transport sendet from")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
             }
             part(Lines; "BC2SC_Transport Lines")
             {
@@ -171,6 +192,27 @@ page 61003 "BC2SC_Transport Card"
                 begin
                     if Confirm(ConfMsg003, false) then
                         ShipCloudMgt.CancelTransport(Rec);
+                end;
+            }
+            action(CompleteTransport)
+            {
+                ApplicationArea = All;
+                Caption = 'Pack all';
+                Image = AllLines;
+                trigger OnAction()
+                var
+                    TransportLine: Record "BC2SC_Transport Line";
+                    ConfMsg004: label 'Pack all lines in one Parcel?';
+                begin
+                    if Confirm(ConfMsg004, true) then begin
+                        TransportLine.setrange("Transport No.", Rec."No.");
+                        TransportLine.setfilter("Parcel No.", '<>%1', '');
+                        TransportLine.findfirst();
+                        repeat
+                            Transportline.validate("Qty. to pack", TransportLine.Quantity);
+                            TransportLine.Modify(true);
+                        until TransportLine.next() = 0;
+                    end;
                 end;
             }
         }

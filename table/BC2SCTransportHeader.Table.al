@@ -122,6 +122,13 @@ table 61001 "BC2SC_Transport Header"
         field(120; "Status"; Enum BC2SC_TransportStatus)
         {
             Caption = 'Status';
+            trigger OnValidate()
+            begin
+                if status = status::Sended then begin
+                    "Transport sendet at" := CurrentDateTime;
+                    "Transport sendet from" := UserId;
+                end;
+            end;
         }
         field(121; "Transport Document Type"; enum BC2SC_Direction)
         {
@@ -129,6 +136,7 @@ table 61001 "BC2SC_Transport Header"
             trigger OnValidate()
             begin
                 Rec.TestField("Source Document Type", Rec."Source Document Type"::Manual);
+
             end;
         }
         field(200; "Source Document Type"; Enum BC2SC_TransportSourceDocType)
@@ -150,6 +158,26 @@ table 61001 "BC2SC_Transport Header"
         {
             Caption = 'Created from Document No.';
             Editable = False;
+        }
+        field(250; "Created at"; DateTime)
+        {
+            Caption = 'Created at';
+            Editable = false;
+        }
+        field(251; "Created from"; Text[50])
+        {
+            Caption = 'Created from';
+            Editable = false;
+        }
+        field(252; "Transport sendet at"; DateTime)
+        {
+            Caption = 'Transport sendet at';
+            Editable = false;
+        }
+        field(253; "Transport sendet from"; text[50])
+        {
+            Caption = 'Transport sendet from';
+            Editable = false;
         }
     }
     keys
@@ -173,6 +201,8 @@ table 61001 "BC2SC_Transport Header"
             ShipCloudSetup.TestField("Transport No. Series");
             "No." := NoSeriesMgt.GetNextNo(ShipCloudSetup."Transport No. Series", today, true);
         end;
+        "Created at" := CurrentDateTime;
+        "Created from" := UserId;
     end;
 
     trigger OnDelete()

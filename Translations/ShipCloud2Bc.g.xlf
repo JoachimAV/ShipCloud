@@ -173,6 +173,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 340792511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created at</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Created at - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 3486763658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Created from - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2280200180 - Field 448892314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Created from Document No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -287,6 +297,16 @@
           <source>Transport Document Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 620487821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport sendet at</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport sendet at - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 2059146932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport sendet from</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport sendet from - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 3001618318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Your Reference</source>
@@ -522,6 +542,16 @@
           <source>Cancel ShipCloud Transport?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CancelTransport - Method OnAction - NamedType ConfMsg003</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2297280142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack all</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CompleteTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2297280142 - Method 1377591017 - NamedType 1297455195" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack all lines in one Parcel?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CompleteTransport - Method OnAction - NamedType ConfMsg004</note>
         </trans-unit>
         <trans-unit id="Page 3010349837 - Action 2497658759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Parcel</source>

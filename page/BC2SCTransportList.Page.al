@@ -91,6 +91,28 @@ page 61002 "BC2SC_Transport List"
                 {
                     ApplicationArea = All;
                 }
+                field("Created at"; rec."Created at")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+                field("Created from"; rec."Created from")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+                field("Transport sendet at"; rec."Transport sendet at")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+
+                field("Transport sendet from"; rec."Transport sendet from")
+                {
+                    ApplicationArea = All;
+                    Visible = False;
+                }
+
             }
         }
     }

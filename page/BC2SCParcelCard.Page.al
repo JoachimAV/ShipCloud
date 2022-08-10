@@ -6,7 +6,6 @@ page 61001 "BC2SC_Parcel Card"
     Caption = 'BC2SC_Parcel Card';
     PageType = Card;
     SourceTable = BC2SC_Parcel;
-    DeleteAllowed = false;
     InsertAllowed = false;
 
     layout
