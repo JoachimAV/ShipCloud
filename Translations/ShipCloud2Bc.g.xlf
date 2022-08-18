@@ -433,6 +433,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromWhseActHeader - NamedType YourRefText</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3883581844 - NamedType 2138038531" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Carrier Tracking for parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickup - NamedType LblTrackingCarrier</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3883581844 - NamedType 197111706" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking for parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickup - NamedType LblTrackingUrl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3883581844 - NamedType 1723079833" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label URL Parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickup - NamedType LblLabelUrl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 2505523563 - NamedType 2138038531" size-unit="char" translate="yes" xml:space="preserve">
           <source>Carrier Tracking for parcel %1</source>
           <note from="Developer" annotates="general" priority="2"></note>

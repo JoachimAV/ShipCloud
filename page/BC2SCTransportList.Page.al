@@ -7,6 +7,7 @@ page 61002 "BC2SC_Transport List"
     Caption = 'BC2SC_Transport List';
     PageType = List;
     SourceTable = "BC2SC_Transport Header";
+    sourcetableview = sorting("No.") order(descending);
     UsageCategory = Lists;
     CardPageId = 61003;
     AutoSplitKey = True;

@@ -55,7 +55,6 @@ codeunit 61001 "BC2SC_ShipCloud Event Mgt."
         ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
         lbl001: label 'Create Transport for Sales Order %1?';
 
-
     begin
         if SalesHeader."Document Type" <> SalesHeader."Document Type"::Order then
             exit;
@@ -91,7 +90,7 @@ codeunit 61001 "BC2SC_ShipCloud Event Mgt."
         TransportHeader: Record "BC2SC_Transport Header";
         ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
         lbl001: label 'Create Transport for Service Order %1?';
-
+        dir: enum BC2SC_Direction;
 
     begin
         if ServiceHeader."Document Type" <> ServiceHeader."Document Type"::Order then
@@ -107,7 +106,7 @@ codeunit 61001 "BC2SC_ShipCloud Event Mgt."
             exit;
 
         if Confirm(lbl001, true, ServiceHeader."No.") then
-            ShipCloudMgt.CreateTranspFromServiceOrder(ServiceHeader);
+            ShipCloudMgt.CreateTranspFromServiceOrder(ServiceHeader, dir::Shipment);
 
     end;
 
@@ -128,7 +127,7 @@ codeunit 61001 "BC2SC_ShipCloud Event Mgt."
         TransportHeader: record "BC2SC_Transport Header";
         ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
         lbl001: label 'Create Transport for Service Order %1?';
-
+        dir: enum BC2SC_Direction;
 
     begin
         if ServiceHeader."Document Type" <> ServiceHeader."Document Type"::Order then
@@ -144,7 +143,7 @@ codeunit 61001 "BC2SC_ShipCloud Event Mgt."
             exit;
 
         if Confirm(lbl001, true, ServiceHeader."No.") then
-            ShipCloudMgt.CreateTranspFromServiceOrder(ServiceHeader);
+            ShipCloudMgt.CreateTranspFromServiceOrder(ServiceHeader, dir::Shipment);
 
     end;
 

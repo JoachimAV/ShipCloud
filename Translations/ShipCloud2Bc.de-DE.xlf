@@ -210,6 +210,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 340792511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created at</source>
+          <target>Erstellt am</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Created at - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 3486763658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created from</source>
+          <target>Erstellt durch</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Created from - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2280200180 - Field 448892314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Created from Document No.</source>
           <target>Erstellt von Belegnr.</target>
@@ -351,6 +363,18 @@
           <target>Transport Belegart</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 620487821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport sendet at</source>
+          <target>Transport versendet am</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport sendet at - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 2059146932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport sendet from</source>
+          <target>Transport versendet durch</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field Transport sendet from - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 3001618318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Your Reference</source>
@@ -505,6 +529,24 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromWhseActHeader - NamedType YourRefText</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3883581844 - NamedType 2138038531" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Carrier Tracking for parcel %1</source>
+          <target>Versender Paketverfolgung f. Paket %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickup - NamedType LblTrackingCarrier</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3883581844 - NamedType 197111706" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking for parcel %1</source>
+          <target>Paketverfolgungsnr. für Paket %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickup - NamedType LblTrackingUrl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3883581844 - NamedType 1723079833" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label URL Parcel %1</source>
+          <target>Paketlabel URL für Paket %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendPickup - NamedType LblLabelUrl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 2505523563 - NamedType 2138038531" size-unit="char" translate="yes" xml:space="preserve">
           <source>Carrier Tracking for parcel %1</source>
           <target>Versender Paketverfolgung f. Paket %1</target>
@@ -638,6 +680,18 @@
           <target>Möchten Sie den ShipCloud Transport stornieren?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CancelTransport - Method OnAction - NamedType ConfMsg003</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2297280142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack all</source>
+          <target>Alles verpacken</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CompleteTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2297280142 - Method 1377591017 - NamedType 1297455195" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pack all lines in one Parcel?</source>
+          <target>Alle Zeilen in ein Paket packen?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action CompleteTransport - Method OnAction - NamedType ConfMsg004</note>
         </trans-unit>
         <trans-unit id="Page 3010349837 - Action 2497658759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Parcel</source>

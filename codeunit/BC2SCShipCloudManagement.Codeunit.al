@@ -137,6 +137,145 @@ codeunit 61000 "BC2SC_ShipCloud Management"
     end;
 
     /// <summary>
+    /// SendPickup.
+    /// </summary>
+    /// <param name="TransportHeader">VAR Record "BC2SC_Transport Header".</param>
+    procedure SendPickup(var TransportHeader: Record "BC2SC_Transport Header")
+    var
+        Parcel: Record BC2SC_Parcel;
+        ShippingAgent: Record "Shipping Agent";
+        TempJsonBuffer: Record "Json Buffer" Temporary;
+        SalesHeader: Record "Sales Header";
+        JsonString: Text;
+        JsonResult: Text;
+        LblTrackingCarrier: Label 'Carrier Tracking for parcel %1';
+        LblTrackingUrl: Label 'Tracking for parcel %1';
+        LblLabelUrl: Label 'Label URL Parcel %1';
+        Name1: Text;
+        Name2: Text;
+    begin
+
+        GetSetup();
+        TransportHeader.TestField("Transport Document Type", TransportHeader."Transport Document Type"::Return);
+        ShippingAgent.get(TransportHeader."Shipping Agent Code");
+
+        Parcel.setrange("Transport No.", TransportHeader."No.");
+        Parcel.FindFirst();
+        repeat
+            JsonString :=
+                '{' +
+                    strsubstno('"carrier":"%1"', ShippingAgent."BC2SC_Shipcloud Agent Name") +
+                '"pickup_time": {' +
+                        ' "earliest": "2015-09-15T09:00:00+02:00",' +
+                        '"latest": "2015-09-15T18:00:00+02:00"' +
+                    '},' +
+                //                '{' +
+                '"pickup_address": {' +
+                    strsubstno('"company": "%1",', TransportHeader."Ship-to Name") +
+                    strsubstno('"first_name": "%1",', TransportHeader."Ship-to Contact") +
+                    strsubstno('"last_name": "%1",', TransportHeader."Ship-to Name 2") +
+                    strsubstno('"street": "%1",', TransportHeader."Ship-to Address") +
+                    strsubstno('"street_no": "%1",', '') +
+                    strsubstno('"city": "%1",', TransportHeader."Ship-to City") +
+                    strsubstno('"zip_code": "%1",', TransportHeader."Ship-to Post Code") +
+                    strsubstno('"country": "%1"', TransportHeader."Ship-to Country/Region Code") +
+                '}' +
+                // '"package": {' +
+                //     strsubstno('"weight": %1,', format(Parcel.Weight, 0, 9)) +
+                //     strsubstno('"length": %1,', Parcel.Length) +
+                //     strsubstno('"width": %1,', Parcel.Width) +
+                //     strsubstno('"height": %1,', Parcel.Height) +
+                //     '"type": "parcel"' +
+                // '},' +
+                // StrSubstNo('"carrier": "%1",', ShippingAgent."BC2SC_Shipcloud Agent Name") +
+                // StrSubstNo('"service": "%1",', TransportHeader."Shipping Agent Service Code") +
+                // StrSubstNo('"reference_number": "%1",', TransportHeader."Your Reference") +
+                // StrSubstNo('"notification_email": "%1",', TransportHeader."Notification E-Mail") +
+                // '"create_shipping_label": true' +
+                '}';
+
+            if ShipCloudSetup.Debug then begin
+                Message(ShipCloudSetup."API Base URL" + 'shipments');
+                Message(JsonString);
+                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key");
+            end else begin
+                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key")
+            end;
+
+            TempJsonBuffer.Deleteall;
+            TempJsonBuffer.ReadFromText(jsonResult);
+
+            if ShipCloudSetup.Debug then begin
+                Commit;
+                page.RunModal(page::"BC2SC_JsonBuffer Result", TempJsonBuffer);
+            end;
+            //Process Result
+            TempJsonBuffer.FindFirst();
+            Repeat
+                case TempJsonBuffer.Value of
+                    'id':
+                        begin
+                            TempJsonBuffer.Next();
+                            Parcel.ID := TempJsonBuffer.Value;
+                            Parcel.modify(true);
+                        end;
+                    'carrier_tracking_no':
+                        begin
+                            TempJsonBuffer.Next();
+                            Parcel."Tracking No." := TempJsonBuffer.Value;
+                            Parcel.modify(true);
+                            case TransportHeader."Source Document Type" of
+                                TransportHeader."Source Document Type"::"Sales Order":
+                                    if SalesHeader.get(SalesHeader."Document Type"::Order, TransportHeader."Source Document No.") then begin
+                                        SalesHeader."Package Tracking No." := Parcel."Tracking No.";
+                                        SalesHeader.modify;
+                                    end;
+                            end;
+                        end;
+                    'carrier_tracking_url':
+                        begin
+                            TempJsonBuffer.Next();
+                            TransportHeader.AddLink(TempJsonBuffer.Value, Strsubstno(LblTrackingCarrier, Parcel."No."));
+                            Parcel.AddLink(TempJsonBuffer.Value, Strsubstno(LblTrackingCarrier, Parcel."No."));
+                            case TransportHeader."Source Document Type" of
+                                TransportHeader."Source Document Type"::"Sales Order":
+                                    if SalesHeader.get(SalesHeader."Document Type"::Order, TransportHeader."Source Document No.") then
+                                        SalesHeader.AddLink(TempJsonBuffer.Value, Strsubstno(LblTrackingCarrier, Parcel."No."));
+                            end;
+                        end;
+                    'label_url':
+                        begin
+                            TempJsonBuffer.Next();
+                            TransportHeader.AddLink(TempJsonBuffer.Value, Strsubstno(LblLabelUrl, Parcel."No."));
+                            Parcel.AddLink(TempJsonBuffer.Value, Strsubstno(LblLabelUrl, Parcel."No."));
+                            case TransportHeader."Source Document Type" of
+                                TransportHeader."Source Document Type"::"Sales Order":
+                                    if SalesHeader.get(SalesHeader."Document Type"::Order, TransportHeader."Source Document No.") then
+                                        SalesHeader.AddLink(TempJsonBuffer.Value, Strsubstno(LblLabelUrl, Parcel."No."));
+                            end;
+                        end;
+                    'price':
+                        begin
+                            TempJsonBuffer.Next();
+                            if evaluate(Parcel.Price, TempJsonBuffer.Value) then;
+                            Parcel.modify(true);
+                        end;
+                    'errors':
+                        begin
+                            TempJsonBuffer.Next();
+                            TempJsonBuffer.Next();
+                            Error(TempJsonBuffer.Value);
+                        end;
+                end;
+            until TempJsonBuffer.Next() = 0;
+        Until Parcel.Next() = 0;
+
+        TransportHeader.validate(Status, TransportHeader.Status::Sended);
+        TransportHeader.modify(true);
+
+    end;
+
+    /// <summary>
     /// SendPickupRequest.
     /// </summary>
     /// <param name="TransportHeader">VAR Record "BC2SC_Transport Header".</param>
@@ -368,7 +507,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         end;
     end;
 
-    Procedure CreateTranspFromServiceOrder(var ServiceHeader: Record "Service Header") TransportNoCreated: Text[20];
+    Procedure CreateTranspFromServiceOrder(var ServiceHeader: Record "Service Header"; Direction: enum BC2SC_Direction) TransportNoCreated: Text[20];
     var
         TransportHeader: Record "BC2SC_Transport Header";
         TransportLine: Record "BC2SC_Transport Line";
@@ -390,7 +529,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
 
         TransportHeader.init;
         TransportHeader.insert(true);
-
+        TransportHeader."Transport Document Type" := Direction;
         //Fill From/To Address
         TransportHeader."Customer No." := ServiceHeader."Customer No.";
         TransportHeader."Ship-to Name" := Serviceheader."Ship-to Name";
@@ -462,6 +601,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
 
         TransportNoCreated := TransportHeader."No.";
     end;
+
 
     Procedure CreateTranspFromSalesOrder(var SalesHeader: Record "Sales Header") TransportNoCreated: Text[20];
     var
