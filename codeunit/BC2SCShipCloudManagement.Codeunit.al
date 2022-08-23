@@ -706,6 +706,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         TransportHeader.TestField(Status, TransportHeader.Status::Open);
         GetSetup();
 
+        TransportLine.setrange("Transport No.", TransportHeader."No.");
         TransportLine.setrange("Parcel No.", '');
         TransportLine.setfilter("Qty. to pack", '<>%1', 0);
         TransportLine.FindFirst();
