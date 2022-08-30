@@ -194,24 +194,50 @@ page 61003 "BC2SC_Transport Card"
                         ShipCloudMgt.CancelTransport(Rec);
                 end;
             }
+            action(SetQtyToPackZero)
+            {
+                ApplicationArea = All;
+                Caption = 'Set Qty. to Pack Zero';
+                Image = DeleteQtyToHandle;
+                trigger OnAction()
+                var
+                    TransportLine: record "BC2SC_Transport Line";
+                    lLabel001: label 'Set all qty. to pack to cero?';
+                begin
+                    if confirm(lLabel001) then begin
+                        TransportLine.setrange("Transport No.", Rec."No.");
+                        TransportLine.setrange("Parcel No.", '');
+                        if TransportLine.findfirst() then
+                            repeat
+                                TransportLine.validate("Qty. to pack", 0);
+                                TransportLine.modify(true);
+                            until TransportLine.next = 0;
+                    end;
+
+                end;
+            }
             action(CompleteTransport)
             {
                 ApplicationArea = All;
                 Caption = 'Pack all';
                 Image = AllLines;
+
                 trigger OnAction()
                 var
                     TransportLine: Record "BC2SC_Transport Line";
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
                     ConfMsg004: label 'Pack all lines in one Parcel?';
                 begin
                     if Confirm(ConfMsg004, true) then begin
                         TransportLine.setrange("Transport No.", Rec."No.");
-                        TransportLine.setfilter("Parcel No.", '<>%1', '');
+                        TransportLine.setfilter("Parcel No.", '%1', '');
                         TransportLine.findfirst();
                         repeat
                             Transportline.validate("Qty. to pack", TransportLine.Quantity);
                             TransportLine.Modify(true);
                         until TransportLine.next() = 0;
+                        commit;
+                        ShipCloudMgt.CreateParcel(Rec);
                     end;
                 end;
             }

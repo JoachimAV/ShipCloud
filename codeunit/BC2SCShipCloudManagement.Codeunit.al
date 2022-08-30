@@ -21,6 +21,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         Name1: Text;
         Name2: Text;
     begin
+        TransportHeader.testfield(Status, TransportHeader.Status::Open);
 
         GetSetup();
         TransportHeader.TestField("Transport Document Type", TransportHeader."Transport Document Type"::Shipment);
@@ -694,6 +695,111 @@ codeunit 61000 "BC2SC_ShipCloud Management"
             end;
         end;
         TransportNoCreated := TransportHeader."No.";
+    end;
+
+    Procedure CreateTranspFromSegmentHeader(var SegmentHeader: Record "Segment Header");
+    var
+        SegmentLine: Record "Segment Line";
+        d: Dialog;
+        i: integer;
+        //CreateAndSend: Boolean;
+        lbl003: label 'Creating Transports #1########';
+        lbl004: label 'Create and send parcels (if not only Transports are created)';
+    begin
+        SegmentHeader.CalcFields("BC2SC_Qty. Transports");
+        SegmentHeader.TestField("BC2SC_Qty. Transports", 0);
+        SegmentHeader.TestField("BC2SC_Packaging Code");
+        SegmentHeader.TestField("BC2SC_Parcel Weight");
+        SegmentHeader.TestField("BC2SC_Shipping Item No.");
+        SegmentHeader.TestField("BC2SC_Shipping Agent Code");
+        SegmentHeader.TestField("BC2SC_Ship. Agent Service Code");
+
+
+        //CreateAndSend := Confirm(lbl004);
+
+        SegmentLine.setrange("Segment No.", SegmentHeader."No.");
+        SegmentLine.setfilter("Contact No.", '<>%1', '');
+        SegmentLine.FindFirst();
+        d.open(lbl003);
+        repeat
+            i += 1;
+            d.Update(1, i);
+            CreateTranspFromSegmentLine(SegmentLine, SegmentHeader);
+        until SegmentLine.Next() = 0;
+        d.Close();
+    end;
+
+    local Procedure CreateTranspFromSegmentLine(var SegmentLine: Record "Segment Line"; SegmentHeader: record "Segment Header");
+    var
+        TransportHeader: Record "BC2SC_Transport Header";
+        TransportLine: Record "BC2SC_Transport Line";
+        Contact: Record Contact;
+        ShippingAgent: Record "Shipping Agent";
+        Parcel: Record BC2SC_Parcel;
+        NextLineNo: Integer;
+        YourRefText: label '%1 %2';
+    begin
+        GetSetup();
+
+        // WhseActLine.SetRange("No.", WhseActHeader."No.");
+        // WhseActLine.findfirst();
+
+        // WhseActLine.setrange("Activity Type", WhseActLine."Activity Type"::Pick);
+
+        ShippingAgent.get(SegmentHeader."BC2SC_Shipping Agent Code");
+        ShippingAgent.TestField("BC2SC_Shipcloud Agent Name");
+
+        TransportHeader.init;
+        TransportHeader.insert(true);
+        TransportHeader."Transport Document Type" := TransportHeader."Transport Document Type"::Shipment;
+        //Fill From/To Address
+        //TransportHeader."Customer No." := ServiceHeader."Customer No.";
+        Contact.get(SegmentLine."Contact No.");
+
+        TransportHeader."Ship-to Name" := Contact."Name";
+        TransportHeader."Ship-to Name 2" := Contact."Name 2";
+        TransportHeader."Ship-to Address" := Contact."Address";
+        TransportHeader."Ship-to Address 2" := Contact."Address 2";
+        TransportHeader."Ship-to City" := Contact."City";
+        TransportHeader."Ship-to Contact" := Contact."First Name" + ' ' + Contact.Surname;
+        TransportHeader."Ship-to Country/Region Code" := Contact."Country/Region Code";
+        TransportHeader."Ship-to County" := Contact."County";
+        TransportHeader."Ship-to Post Code" := Contact."Post Code";
+        TransportHeader."Shipment Date" := Today();
+        //TransportHeader."Shipment Method Code" := Contact."Shipment Method Code";
+        TransportHeader."Shipping Agent Code" := SegmentHeader."BC2SC_Shipping Agent Code";
+        TransportHeader."Shipping Agent Service Code" := SegmentHeader."BC2SC_Ship. Agent Service Code";
+
+        TransportHeader.validate("Source Document Type", TransportHeader."Source Document Type"::Segment);
+        TransportHeader.validate("Source Document No.", SegmentHeader."No.");
+        TransportHeader.Validate("Created from Document Type", TransportHeader."Created from Document Type"::Segment);
+        TransportHeader.Validate("Created from Document No.", SegmentHeader."No.");
+        TransportHeader."Your Reference" := strsubstno(YourRefText, SegmentHeader."No.", Contact."No.");
+
+        TransportHeader."Notification E-Mail" := Contact."E-Mail";
+        TransportHeader.Modify(True);
+
+
+        TransportLine.init;
+        TransportLine."Transport No." := TransportHeader."No.";
+        TransportLine."Line No." := 10000;
+        TransportLine.validate(type, TransportLine.Type::Item);
+        TransportLine.validate("No.", SegmentHeader."BC2SC_Shipping Item No.");
+        TransportLine.validate("Weight per Unit", SegmentHeader."BC2SC_Parcel Weight");
+        TransportLine.validate(Quantity, 1);
+        TransportLine.validate("Qty. to pack", 1);
+
+        TransportLine.insert(true);
+
+        Parcel.init;
+        Parcel.insert(true);
+        Parcel.Validate("Packaging Code", SegmentHeader."BC2SC_Packaging Code");
+        Parcel.Weight := SegmentHeader."BC2SC_Parcel Weight";
+        Parcel."Transport No." := TransportHeader."No.";
+        Parcel.Modify(true);
+
+        TransportLine."Parcel No." := Parcel."No.";
+        TransportLine.modify;
     end;
 
     Procedure CreateParcel(var TransportHeader: Record "BC2SC_Transport Header");

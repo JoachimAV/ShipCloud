@@ -1,5 +1,5 @@
 /// <summary>
-/// PageExtension BC2SC_Sales Order (ID 61004) extends Record Sales Order.
+/// PageExtension Sales Order (ID 61004) extends Record Sales Order.
 /// </summary>
 pageextension 61004 "BC2SC_Sales Order" extends "Sales Order"
 {

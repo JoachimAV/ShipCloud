@@ -18,4 +18,8 @@ enum 61003 BC2SC_TransportCreatedDocType
     {
         Caption = 'Sales Header';
     }
+    value(4; "Segment")
+    {
+        Caption = 'Segment';
+    }
 }

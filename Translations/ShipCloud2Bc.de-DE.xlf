@@ -517,6 +517,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromSalesOrder - NamedType YourRefText</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 2331202912 - NamedType 3775494043" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creating Transports #1########</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromSegmentHeader - NamedType lbl003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 2331202912 - NamedType 3137797426" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create and send parcels (if not only Transports are created)</source>
+          <target>Erstellt und versendet Pakete</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromSegmentHeader - NamedType lbl004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - Method 3629265799 - NamedType 1044704471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2</source>
+          <target>%1 %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromSegmentLine - NamedType YourRefText</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 3356483517 - NamedType 1044704471" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 %2</source>
           <target>%1 %2</target>
@@ -717,6 +736,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action SendTransport - Method OnAction - NamedType ConfMsg002</note>
         </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2193753802 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set Qty. to Pack Zero</source>
+          <target>Menge zu packen auf null setzen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action SetQtyToPackZero - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2193753802 - Method 1377591017 - NamedType 4001786125" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set all qty. to pack to cero?</source>
+          <target>Alle Restmengen zu packen auf Null setzen?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action SetQtyToPackZero - Method OnAction - NamedType lLabel001</note>
+        </trans-unit>
         <trans-unit id="Page 3459893926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_Transport Lines</source>
           <target>Transportzeilen</target>
@@ -734,6 +765,30 @@
           <target>Transportliste</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 991176927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancel Shipcloud Transports</source>
+          <target>Transporte stornieren</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action CancelTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 991176927 - Method 1377591017 - NamedType 659758578" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancel ShipCloud Transports (marked lines)?</source>
+          <target>Möchten Sie die markierten Zeilen stornieren?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action CancelTransport - Method OnAction - NamedType ConfMsg003</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 2729335617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send Transports to ShipCloud</source>
+          <target>Transporte senden</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action SendTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 2729335617 - Method 1377591017 - NamedType 22061961" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send Transports to Shipcloud (marked lines)?</source>
+          <target>Möchten Sie die markierten Zeilen senden?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action SendTransport - Method OnAction - NamedType ConfMsg002</note>
         </trans-unit>
         <trans-unit id="PageExtension 1817648678 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Create Transport</source>
@@ -758,6 +813,30 @@
           <target>Der Transport %1 existiert für diesen Beleg. Dennoch neu erstellen?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Sales Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg003</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 482209945 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
+          <source>Create Transport</source>
+          <target>Erstelle Transport</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Service Order - Action BC2SC_CreateTransport - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 482209945 - Action 2483144485 - Method 1377591017 - NamedType 3679332640" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 482209945">
+          <source>Create Transport for this Service Order?</source>
+          <target>Transport für diesen Serviceauftrag erstellen?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Service Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg001</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 482209945 - Action 2483144485 - Method 1377591017 - NamedType 22061961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 482209945">
+          <source>Transport %1 created. Open Document?</source>
+          <target>Transport %1 wurde erzeugt. Möchten Sie den Transport öffnen?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Service Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg002</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 482209945 - Action 2483144485 - Method 1377591017 - NamedType 659758578" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 482209945">
+          <source>Transport %1 for this Document exists. Create a new Transport Document?</source>
+          <target>Der Transport %1 existiert für diesen Beleg. Dennoch neu erstellen?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Service Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg003</note>
         </trans-unit>
         <trans-unit id="PageExtension 4240524421 - Action 3070869345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4240524421">
           <source>Create Transport</source>
@@ -807,29 +886,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Hist. Sell-to FactBox - Control BC2SC_Qty. Transports - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2145436509 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
-          <source>Create Transport</source>
-          <target>Erstelle Transport</target>
+        <trans-unit id="PageExtension 1430222053 - Action 1418054817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1430222053">
+          <source>Create ShipCloud Transport</source>
+          <target>ShipCloud Transport erstellen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Service Order - Action BC2SC_CreateTransport - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2145436509 - Action 2483144485 - Method 1377591017 - NamedType 3679332640" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2145436509">
-          <source>Create Transport for this Service Order?</source>
-          <target>Transport für diesen Serviceauftrag erstellen?</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Service Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg001</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2145436509 - Action 2483144485 - Method 1377591017 - NamedType 22061961" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2145436509">
-          <source>Transport %1 created. Open Document?</source>
-          <target>Transport %1 wurde erzeugt. Möchten Sie den Transport öffnen?</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Service Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg002</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2145436509 - Action 2483144485 - Method 1377591017 - NamedType 659758578" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2145436509">
-          <source>Transport %1 for this Document exists. Create a new Transport Document?</source>
-          <target>Der Transport %1 existiert für diesen Beleg. Dennoch neu erstellen?</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Service Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg003</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Segment - Action CreateShipCloudTransports - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3547390336 - Action 3070869345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3547390336">
           <source>Create Transport</source>
@@ -867,6 +928,42 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension BC2SC_ShippingAgent - Field BC2SC_Shipcloud Agent Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2823230224 - Field 119341914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2823230224">
+          <source>Packaging Code</source>
+          <target>Paket Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Segment Header - Field BC2SC_Packaging Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2823230224 - Field 1190541015 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2823230224">
+          <source>Parcel Weight</source>
+          <target>Paketgewicht</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Segment Header - Field BC2SC_Parcel Weight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2823230224 - Field 196092146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2823230224">
+          <source>Qty. Transports</source>
+          <target>Anzahl Transporte</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Segment Header - Field BC2SC_Qty. Transports - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2823230224 - Field 2762155979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2823230224">
+          <source>Shipping Agent Service Code</source>
+          <target>Zustellertransportartencode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Segment Header - Field BC2SC_Ship. Agent Service Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2823230224 - Field 2774063206 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2823230224">
+          <source>Shipping Agent Code</source>
+          <target>Zustellercode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Segment Header - Field BC2SC_Shipping Agent Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2823230224 - Field 1711413928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2823230224">
+          <source>Shipping Item No.</source>
+          <target>Transport Artikelnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Segment Header - Field BC2SC_Shipping Item No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 2629604923 - EnumValue 3223440110 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pickup</source>
           <target>Abholung</target>
@@ -886,6 +983,12 @@
           <target>Verkaufskopf</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportCreatedDocType - EnumValue Sales Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3033717497 - EnumValue 1430222053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Segment</source>
+          <target>Segment</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportCreatedDocType - EnumValue Segment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3033717497 - EnumValue 3610197182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Service Header</source>
@@ -916,6 +1019,12 @@
           <target>Verkaufsauftrag</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportSourceDocType - EnumValue Sales Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2268404222 - EnumValue 1430222053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Segment</source>
+          <target>Segment</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum BC2SC_TransportSourceDocType - EnumValue Segment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2268404222 - EnumValue 2145436509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Service Order</source>

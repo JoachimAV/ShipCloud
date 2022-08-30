@@ -116,5 +116,60 @@ page 61002 "BC2SC_Transport List"
 
             }
         }
+        area(FactBoxes)
+        {
+            systempart(Links; Links)
+            {
+                Applicationarea = All;
+            }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+
+            action(SendTransport)
+            {
+                ApplicationArea = All;
+                Caption = 'Send Transports to ShipCloud';
+                Image = SendTo;
+                trigger OnAction()
+                var
+                    TransportHeader: Record "BC2SC_Transport Header";
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+                    ConfMsg002: label 'Send Transports to Shipcloud (marked lines)?';
+                begin
+                    if Confirm(ConfMsg002, True) then begin
+                        CurrPage.SetSelectionFilter(TransportHeader);
+                        TransportHeader.FindFirst();
+                        repeat
+                            ShipCloudMgt.SendTransport(TransportHeader);
+                        until TransportHeader.Next() = 0;
+                    end;
+                end;
+            }
+            action(CancelTransport)
+            {
+                ApplicationArea = All;
+                Caption = 'Cancel Shipcloud Transports';
+                Image = Cancel;
+                trigger OnAction()
+                var
+                    TransportHeader: record "BC2SC_Transport Header";
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+                    ConfMsg003: label 'Cancel ShipCloud Transports (marked lines)?';
+                begin
+                    if Confirm(ConfMsg003, True) then begin
+                        CurrPage.SetSelectionFilter(TransportHeader);
+                        TransportHeader.FindFirst();
+                        repeat
+                            ShipCloudMgt.CancelTransport(TransportHeader);
+                        until TransportHeader.Next() = 0;
+                    end;
+                end;
+            }
+
+        }
     }
 }

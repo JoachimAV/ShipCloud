@@ -39,7 +39,7 @@ table 61002 "BC2SC_Transport Line"
                 Rec.Description := Item.Description;
                 Rec."Description 2" := Item."Description 2";
                 Rec."Unit of Measure Code" := Item."Base Unit of Measure";
-                Rec."Weight per Unit" := Item."Gross Weight";
+                CheckWeightperUnit();
             end;
         }
         field(7; Description; Text[100])
@@ -84,6 +84,7 @@ table 61002 "BC2SC_Transport Line"
                 ShipCloudSetup: Record "BC2SC_ShipCloud Setup";
             begin
                 CheckModifyAllowed();
+                CheckWeightperUnit();
                 ShipCloudSetup.get;
                 if ShipCloudSetup."Def. Qty. to Pack with Qty." then
                     Rec.validate("Qty. to pack", Rec.Quantity);
@@ -109,10 +110,8 @@ table 61002 "BC2SC_Transport Line"
             trigger OnValidate()
             begin
                 CheckModifyAllowed();
-                if Rec."Total Weight" <> 0 then
+                if (Rec."Total Weight" > 0) and (Rec."Qty. to pack" > 0) then
                     Rec."Weight per Unit" := Rec."Total Weight" / Rec."Qty. to pack"
-                else
-                    Rec."Weight per Unit" := 0;
             end;
         }
         field(18; "Variant Code"; Code[10])
@@ -146,6 +145,7 @@ table 61002 "BC2SC_Transport Line"
 
             begin
                 CheckModifyAllowed();
+                CheckWeightperUnit();
                 Rec."Total Weight" := Rec."Weight per Unit" * Rec."Qty. to pack";
             end;
         }
@@ -168,5 +168,17 @@ table 61002 "BC2SC_Transport Line"
     procedure CheckModifyAllowed()
     begin
         Testfield("Parcel No.", '');
+    end;
+
+    local procedure CheckWeightperUnit()
+    var
+        Item: record Item;
+    begin
+        if "Weight per Unit" = 0 then
+            if Item.Get(Rec."No.") then
+                if Item."Gross Weight" > 0 then
+                    Rec.validate("Weight per Unit", item."Gross Weight")
+                else
+                    Rec.Validate("Weight per Unit", item."Net Weight");
     end;
 }

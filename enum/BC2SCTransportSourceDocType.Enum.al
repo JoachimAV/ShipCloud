@@ -17,4 +17,8 @@ enum 61002 BC2SC_TransportSourceDocType
     {
         Caption = 'Service Order';
     }
+    value(4; "Segment")
+    {
+        Caption = 'Segment';
+    }
 }

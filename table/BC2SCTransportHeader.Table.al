@@ -4,6 +4,8 @@
 table 61001 "BC2SC_Transport Header"
 {
     Caption = 'BC2SC_Transport Header';
+    LookupPageId = "BC2SC_Transport List";
+    DrillDownPageId = "BC2SC_Transport List";
 
     fields
     {

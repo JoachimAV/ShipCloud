@@ -1,7 +1,7 @@
 /// <summary>
 /// PageExtension Service Order (ID 61003) extends Record Service Order.
 /// </summary>
-pageextension 61003 "Service Order" extends "Service Order"
+pageextension 61003 "BC2SC_Service Order" extends "Service Order"
 {
     layout
     {
