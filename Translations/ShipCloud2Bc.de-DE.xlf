@@ -519,9 +519,8 @@
         </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 2331202912 - NamedType 3775494043" size-unit="char" translate="yes" xml:space="preserve">
           <source>Creating Transports #1########</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Erzeuge Transport #1##########</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method CreateTranspFromSegmentHeader - NamedType lbl003</note>
         </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 2331202912 - NamedType 3137797426" size-unit="char" translate="yes" xml:space="preserve">
@@ -676,6 +675,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control NoSeries - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3128493124 - Action 2132258788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Test Label</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Action TestLabel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3010349837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport Card</source>
           <target>Transportkarte</target>
@@ -814,6 +820,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Sales Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg003</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2169475681 - Action 1418054817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1430222053">
+          <source>Create ShipCloud Transport</source>
+          <target>ShipCloud Transport erstellen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Segment - Action CreateShipCloudTransports - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 482209945 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Create Transport</source>
           <target>Erstelle Transport</target>
@@ -885,12 +897,6 @@
           <target>Anzahl Transporte</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Hist. Sell-to FactBox - Control BC2SC_Qty. Transports - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1430222053 - Action 1418054817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1430222053">
-          <source>Create ShipCloud Transport</source>
-          <target>ShipCloud Transport erstellen</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Segment - Action CreateShipCloudTransports - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3547390336 - Action 3070869345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3547390336">
           <source>Create Transport</source>

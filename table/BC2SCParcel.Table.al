@@ -83,6 +83,11 @@ table 61003 BC2SC_Parcel
             Caption = 'ID';
             editable = false;
         }
+        field(50; "No. of Printed"; Integer)
+        {
+            Caption = 'No. of Printed';
+            Editable = false;
+        }
     }
     keys
     {

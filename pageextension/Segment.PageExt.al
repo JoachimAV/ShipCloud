@@ -1,4 +1,4 @@
-pageextension 61007 "Segment" extends Segment
+pageextension 61007 "BC2SC_Segment" extends Segment
 {
     layout
     {

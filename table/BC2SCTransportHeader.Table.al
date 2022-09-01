@@ -181,6 +181,11 @@ table 61001 "BC2SC_Transport Header"
             Caption = 'Transport sendet from';
             Editable = false;
         }
+        field(300; "No. of Printed"; Integer)
+        {
+            Caption = 'No. of Printed';
+            Editable = false;
+        }
     }
     keys
     {

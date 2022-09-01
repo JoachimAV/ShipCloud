@@ -113,7 +113,11 @@ page 61002 "BC2SC_Transport List"
                     ApplicationArea = All;
                     Visible = False;
                 }
-
+                field("No. of Printed"; Rec."No. of Printed")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                }
             }
         }
         area(FactBoxes)
@@ -169,7 +173,42 @@ page 61002 "BC2SC_Transport List"
                     end;
                 end;
             }
-
+        }
+        area(Reporting)
+        {
+            action(PrintTransport)
+            {
+                ApplicationArea = All;
+                Caption = 'Print all Labels';
+                Enabled = NodePrintActivated;
+                trigger OnAction()
+                var
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+                    TransportHeader: Record "BC2SC_Transport Header";
+                    d: dialog;
+                begin
+                    if confirm(lbl001) then begin
+                        CurrPage.SetSelectionFilter(TransportHeader);
+                        TransportHeader.FindFirst();
+                        d.open(lbl002);
+                        repeat
+                            d.Update(1, TransportHeader."No.");
+                            ShipCloudMgt.PrintTransport(TransportHeader);
+                        until TransportHeader.Next() = 0;
+                    end;
+                end;
+            }
         }
     }
+    var
+        ShipCloudSetup: Record "BC2SC_ShipCloud Setup";
+        NodePrintActivated: Boolean;
+        lbl001: label 'Print all parcel labels for selected transports?';
+        lbl002: label 'Printing Transport #1###############';
+
+    trigger OnOpenPage()
+    begin
+        ShipCloudSetup.Get();
+        NodePrintActivated := ShipCloudSetup."Activate PrintNode printing";
+    end;
 }

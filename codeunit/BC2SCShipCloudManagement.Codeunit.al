@@ -17,7 +17,6 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         JsonResult: Text;
         LblTrackingCarrier: Label 'Carrier Tracking for parcel %1';
         LblTrackingUrl: Label 'Tracking for parcel %1';
-        LblLabelUrl: Label 'Label URL Parcel %1';
         Name1: Text;
         Name2: Text;
     begin
@@ -931,10 +930,62 @@ codeunit 61000 "BC2SC_ShipCloud Management"
     //     end;
     // end;
 
-    local procedure SEND_Request(Type: Text; uri: Text; _queryObj: Text; pass: Text[50]) responseText: Text;
-
+    procedure PrintTransport(var TransportHeader: record "BC2SC_Transport Header")
     var
+        TransportLine: Record "BC2SC_Transport Line";
+        Parcel: Record BC2SC_Parcel;
+    begin
+        Parcel.setrange("Transport No.", TransportHeader."No.");
+        Parcel.FindFirst();
+        repeat
+            PrintPDFByPrintNode(Parcel);
+        until Parcel.Next() = 0;
+    end;
+    /// <summary>
+    /// PrintPDFByPrintNode.
+    /// </summary>
+    /// <param name="Parcel">record BC2SC_Parcel.</param>
+    procedure PrintPDFByPrintNode(var Parcel: record BC2SC_Parcel);
+    var
+        ShipCloudSetup: record "BC2SC_ShipCloud Setup";
+        PrintNodePrinter: record "BC2SC_PrintNode Label Printer";
+        PrintNodeUser: Record "BC2SC_PrintNode User Setup";
+        RecordLink: record "Record Link";
+        Json: text;
+    begin
+        ShipCloudSetup.get;
+        ShipCloudSetup.TestField("Activate PrintNode printing", true);
+        ShipCloudSetup.TestField("PrintNode API Key");
+        ShipCloudSetup.TestField("PrintNode URL");
 
+        PrintNodeUser.get(UserId);
+        PrintNodeUser.TestField("Label Printer");
+
+        PrintNodePrinter.get(PrintNodeUser."Label Printer");
+        PrintNodePrinter.TestField("Printer ID");
+
+        RecordLink.setrange("Record ID", Parcel.RecordId);
+        RecordLink.setrange(Description, Strsubstno(LblLabelUrl, Parcel."No."));
+        RecordLink.FindFirst();
+
+        Json := '{' +
+                    StrSubstNo('"printerId": %1,', PrintNodePrinter."Printer ID") +
+                strsubstno('"title": "%1",', Strsubstno(LblLabelUrl, Parcel."No.")) +
+                '"contentType": "pdf_uri",' +
+                strsubstno('"content": "%1",', RecordLink.URL1) +
+                '"source": "ShipCloud Direct Printing"' +
+        '}';
+
+        if ShipCloudSetup.Debug then
+            message(SEND_Request('POST', ShipCloudSetup."PrintNode URL", Json, ShipCloudSetup."PrintNode API Key"))
+        else
+            SEND_Request('POST', ShipCloudSetup."PrintNode URL", Json, ShipCloudSetup."PrintNode API Key");
+        Parcel."No. of Printed" += 1;
+        Parcel.modify(true);
+    end;
+
+    local procedure SEND_Request(Type: Text; uri: Text; _queryObj: Text; pass: Text[50]) responseText: Text;
+    var
         Client: HttpClient;
         RequestHeaders: HttpHeaders;
         RequestContent: HttpContent;
@@ -987,4 +1038,5 @@ codeunit 61000 "BC2SC_ShipCloud Management"
     var
         ShipCloudSetup: Record "BC2SC_ShipCloud Setup";
         SetupReaded: Boolean;
+        LblLabelUrl: Label 'Label URL Parcel %1';
 }

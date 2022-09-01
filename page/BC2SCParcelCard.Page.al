@@ -67,6 +67,11 @@ page 61001 "BC2SC_Parcel Card"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                field("No. of Printed"; Rec."No. of Printed")
+                {
+                    ApplicationArea = All;
+                    Importance = Additional;
+                }
             }
         }
         area(FactBoxes)
@@ -77,4 +82,35 @@ page 61001 "BC2SC_Parcel Card"
             }
         }
     }
+    actions
+    {
+        area(Reporting)
+        {
+            action(PrintLabel)
+            {
+                Enabled = NodePrintActivated;
+                ApplicationArea = All;
+                Caption = 'Print Label';
+                ToolTip = 'Print this label using PrintNode. You need an account.';
+                Image = PrintReport;
+                trigger OnAction()
+                var
+                    ShipCloudMgt: codeunit "BC2SC_ShipCloud Management";
+                begin
+                    if confirm(lbl001) then
+                        ShipCloudMgt.PrintPDFByPrintNode(Rec);
+                end;
+            }
+        }
+    }
+    var
+        ShipCloudSetup: record "BC2SC_ShipCloud Setup";
+        NodePrintActivated: Boolean;
+        lbl001: label 'Print Label?';
+
+    trigger OnOpenPage()
+    begin
+        ShipCloudSetup.get();
+        NodePrintActivated := ShipCloudSetup."Activate PrintNode printing";
+    end;
 }

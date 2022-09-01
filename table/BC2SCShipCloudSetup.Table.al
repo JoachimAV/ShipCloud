@@ -59,6 +59,18 @@ table 61000 "BC2SC_ShipCloud Setup"
         {
             Caption = 'Create Transp. when Sales.-Post';
         }
+        field(50; "Activate PrintNode printing"; Boolean)
+        {
+            Caption = 'Activate PrintNode printing';
+        }
+        field(51; "PrintNode URL"; Text[100])
+        {
+            Caption = 'PrintNode URL';
+        }
+        field(52; "PrintNode API Key"; Text[50])
+        {
+            Caption = 'PrintNode API Key';
+        }
     }
     keys
     {

@@ -78,6 +78,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Parcel - Field No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1545523911 - Field 1116149826 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Printed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Parcel - Field No. of Printed - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1545523911 - Field 3046725502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Packaging Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -108,10 +113,55 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Parcel - Field Width - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2641767735 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BC2SC_PrintNode Label Printer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2641767735 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2641767735 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2641767735 - Field 2628728933 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Printer ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1186058773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BC2SC_PrintNode User Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode User Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1186058773 - Field 148441732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label Printer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode User Setup - Field Label Printer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1186058773 - Field 2681671913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label Printer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode User Setup - Field Label Printer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1186058773 - Field 2708250016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode User Setup - Field User ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3128493124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_ShipCloud Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 3299710763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Activate PrintNode printing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Activate PrintNode printing - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3128493124 - Field 869913466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>API Base URL</source>
@@ -163,6 +213,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Parcel No. Series - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 855473994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode API Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field PrintNode API Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 698019366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode URL</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field PrintNode URL - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3128493124 - Field 2100654545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -202,6 +262,11 @@
           <source>No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2280200180 - Field 1116149826 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Printed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_Transport Header - Field No. of Printed - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Field 2783125456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Notification E-Mail</source>
@@ -418,6 +483,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Event Mgt. - Method Whse.-Act.-Post (Yes/No)_OnBeforeConfirmPost - NamedType lbl001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3853189576 - NamedType 1723079833" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label URL Parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - NamedType LblLabelUrl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3853189576 - Method 3859410026 - NamedType 1044704471" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -488,11 +558,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendTransport - NamedType LblTrackingUrl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3853189576 - Method 2729335617 - NamedType 1723079833" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Label URL Parcel %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BC2SC_ShipCloud Management - Method SendTransport - NamedType LblLabelUrl</note>
-        </trans-unit>
         <trans-unit id="Page 375588791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>JsonBufferResult</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -508,10 +573,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Parcel Card - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2835145699 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Label?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Parcel Card - NamedType lbl001</note>
+        </trans-unit>
+        <trans-unit id="Page 2835145699 - Action 3288048129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print this label using PrintNode. You need an account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Parcel Card - Action PrintLabel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2835145699 - Action 3288048129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Parcel Card - Action PrintLabel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2726427665 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_Parcel List</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Parcel List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2641767735 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode Label Printer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_PrintNode Label Printer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1186058773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode User Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_PrintNode User Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3128493124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ShipCloud Setup</source>
@@ -553,10 +643,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control NoSeries - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3128493124 - Control 4277345379 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Control PrintNode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Action 388819225 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode Label Printer Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Action PrintNodePrinter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Action 4227435980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode User Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Action PrintNodeUser - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3128493124 - Action 2132258788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print Test Label</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Action TestLabel - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3010349837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3010349837 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print all parcel labels?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - NamedType lbl001</note>
         </trans-unit>
         <trans-unit id="Page 3010349837 - Control 2708130946 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Reference</source>
@@ -613,6 +728,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action SetQtyToPackZero - Method OnAction - NamedType lLabel001</note>
         </trans-unit>
+        <trans-unit id="Page 3010349837 - Action 2812113054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print all Labels</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport Card - Action PrintTransport - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3459893926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_Transport Lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -627,6 +747,16 @@
           <source>BC2SC_Transport List</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - NamedType 755919981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print all parcel labels for selected transports?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - NamedType lbl001</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - NamedType 118223364" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Printing Transport #1###############</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - NamedType lbl002</note>
         </trans-unit>
         <trans-unit id="Page 801369431 - Action 991176927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cancel Shipcloud Transports</source>
@@ -648,6 +778,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action SendTransport - Method OnAction - NamedType ConfMsg002</note>
         </trans-unit>
+        <trans-unit id="Page 801369431 - Action 2812113054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print all Labels</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action PrintTransport - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 1817648678 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Create Transport</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -667,6 +802,11 @@
           <source>Transport %1 for this Document exists. Create a new Transport Document?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Sales Order - Action BC2SC_CreateTransport - Method OnAction - NamedType ConfMsg003</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2169475681 - Action 1418054817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1430222053">
+          <source>Create ShipCloud Transport</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension BC2SC_Segment - Action CreateShipCloudTransports - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 482209945 - Action 2483144485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Create Transport</source>
@@ -727,11 +867,6 @@
           <source>Qty. Transports</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Hist. Sell-to FactBox - Control BC2SC_Qty. Transports - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1430222053 - Action 1418054817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1430222053">
-          <source>Create ShipCloud Transport</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Segment - Action CreateShipCloudTransports - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3547390336 - Action 3070869345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3547390336">
           <source>Create Transport</source>

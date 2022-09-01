@@ -130,6 +130,11 @@ page 61003 "BC2SC_Transport Card"
                     ApplicationArea = All;
                     Visible = False;
                 }
+                field("No. of Printed"; Rec."No. of Printed")
+                {
+                    ApplicationArea = All;
+                    Importance = Additional;
+                }
             }
             part(Lines; "BC2SC_Transport Lines")
             {
@@ -242,13 +247,38 @@ page 61003 "BC2SC_Transport Card"
                 end;
             }
         }
+        area(Reporting)
+        {
+            action(PrintTransport)
+            {
+                ApplicationArea = All;
+                Caption = 'Print all Labels';
+                Enabled = NodePrintActivated;
+                trigger OnAction()
+                var
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+                begin
+                    if confirm(lbl001) then
+                        ShipCloudMgt.PrintTransport(Rec);
+                end;
+            }
+        }
     }
     var
         PageEditable: Boolean;
+        ShipCloudSetup: Record "BC2SC_ShipCloud Setup";
+        NodePrintActivated: Boolean;
+        lbl001: label 'Print all parcel labels?';
 
     trigger OnAfterGetCurrRecord()
     begin
         CurrPage.Editable := CheckPageEditable();
+    end;
+
+    trigger OnOpenPage()
+    begin
+        ShipCloudSetup.Get();
+        NodePrintActivated := ShipCloudSetup."Activate PrintNode printing";
     end;
 
     Procedure CheckPageEditable(): Boolean;
@@ -256,4 +286,5 @@ page 61003 "BC2SC_Transport Card"
         PageEditable := (Rec.Status = Rec.Status::Open);
         Exit(PageEditable);
     end;
+
 }
