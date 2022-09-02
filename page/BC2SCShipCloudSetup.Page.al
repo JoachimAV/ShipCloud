@@ -24,6 +24,10 @@ page 61000 "BC2SC_ShipCloud Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("Sandbox API Key"; Rec."Sandbox API Key")
+                {
+                    ApplicationArea = All;
+                }
                 field(Debug; Rec.Debug)
                 {
                     ApplicationArea = All;

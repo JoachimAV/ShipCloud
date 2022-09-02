@@ -19,6 +19,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         LblTrackingUrl: Label 'Tracking for parcel %1';
         Name1: Text;
         Name2: Text;
+        APIKey: Text[50];
     begin
         TransportHeader.testfield(Status, TransportHeader.Status::Open);
 
@@ -54,13 +55,16 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                 StrSubstNo('"notification_email": "%1",', TransportHeader."Notification E-Mail") +
                 '"create_shipping_label": true' +
                 '}';
-
+            if ShipCloudSetup."Use Sandbox" then
+                APIKey := ShipCloudSetup."Sandbox API Key"
+            else
+                apikey := ShipCloudSetup."API Key";
             if ShipCloudSetup.Debug then begin
                 Message(ShipCloudSetup."API Base URL" + 'shipments');
                 Message(JsonString);
-                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key");
+                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, APIKey);
             end else begin
-                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key")
+                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, APIKey)
             end;
 
             TempJsonBuffer.Deleteall;
@@ -153,6 +157,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         LblLabelUrl: Label 'Label URL Parcel %1';
         Name1: Text;
         Name2: Text;
+        APIKey: Text[50];
     begin
 
         GetSetup();
@@ -193,13 +198,16 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                 // StrSubstNo('"notification_email": "%1",', TransportHeader."Notification E-Mail") +
                 // '"create_shipping_label": true' +
                 '}';
-
+            if ShipCloudSetup."Use Sandbox" then
+                APIKey := ShipCloudSetup."Sandbox API Key"
+            else
+                apikey := ShipCloudSetup."API Key";
             if ShipCloudSetup.Debug then begin
                 Message(ShipCloudSetup."API Base URL" + 'shipments');
                 Message(JsonString);
-                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key");
+                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, APIKey);
             end else begin
-                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key")
+                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, APIKey)
             end;
 
             TempJsonBuffer.Deleteall;
@@ -292,6 +300,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         LblLabelUrl: Label 'Label URL Parcel %1';
         Name1: Text;
         Name2: Text;
+        APIKey: text[50];
     begin
         GetSetup();
         //Todo: Noch offen Rücktransport
@@ -326,13 +335,16 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                 StrSubstNo('"notification_email": "%1",', TransportHeader."Notification E-Mail") +
                 '"create_shipping_label": true' +
                 '}';
-
+            if ShipCloudSetup."Use Sandbox" then
+                APIKey := ShipCloudSetup."Sandbox API Key"
+            else
+                APIKey := ShipCloudSetup."API Key";
             if ShipCloudSetup.Debug then begin
                 Message(ShipCloudSetup."API Base URL" + 'shipments');
                 Message(JsonString);
-                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key");
+                JSonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, APIKey);
             end else begin
-                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, ShipCloudSetup."API Key")
+                JsonResult := SEND_Request('POST', ShipCloudSetup."API Base URL" + 'shipments', JsonString, APIKey)
             end;
 
             TempJsonBuffer.Deleteall;

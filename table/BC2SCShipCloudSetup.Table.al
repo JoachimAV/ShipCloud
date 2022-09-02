@@ -11,17 +11,14 @@ table 61000 "BC2SC_ShipCloud Setup"
         field(2; "API Key"; Text[50])
         {
             Caption = 'API Key';
-            DataClassification = ToBeClassified;
         }
         field(1; "Code"; Code[10])
         {
             Caption = 'Code';
-            DataClassification = ToBeClassified;
         }
         field(3; "API Base URL"; Text[100])
         {
             Caption = 'API Base URL';
-            DataClassification = ToBeClassified;
         }
         field(4; "Transport No. Series"; Code[20])
         {
@@ -32,6 +29,15 @@ table 61000 "BC2SC_ShipCloud Setup"
         {
             Caption = 'Parcel No. Series';
             TableRelation = "No. Series";
+        }
+        field(6; "Sandbox API Key"; Text[50])
+        {
+            Caption = 'Sandbox API Key';
+
+        }
+        field(7; "Use Sandbox"; Boolean)
+        {
+            Caption = 'Use Sandbox';
         }
         field(500; "Debug"; Boolean)
         {

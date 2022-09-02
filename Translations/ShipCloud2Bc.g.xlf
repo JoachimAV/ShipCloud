@@ -223,10 +223,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field PrintNode URL - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 833450822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sandbox API Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Sandbox API Key - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3128493124 - Field 2100654545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport No. Series</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Transport No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3128493124 - Field 2903151978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use Sandbox</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_ShipCloud Setup - Field Use Sandbox - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2280200180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_Transport Header</source>
