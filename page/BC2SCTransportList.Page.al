@@ -181,6 +181,7 @@ page 61002 "BC2SC_Transport List"
                 ApplicationArea = All;
                 Caption = 'Print all Labels';
                 Enabled = NodePrintActivated;
+                Image = PrintDocument;
                 trigger OnAction()
                 var
                     ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
@@ -197,6 +198,13 @@ page 61002 "BC2SC_Transport List"
                         until TransportHeader.Next() = 0;
                     end;
                 end;
+            }
+            Action(PrintNodeUser)
+            {
+                Caption = 'PrintNode User Setup';
+                RunObject = page "BC2SC_PrintNode User Setup";
+                image = UserSetup;
+                ApplicationArea = All;
             }
         }
     }

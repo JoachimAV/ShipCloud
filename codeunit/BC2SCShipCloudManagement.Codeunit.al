@@ -985,15 +985,34 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                 strsubstno('"title": "%1",', Strsubstno(LblLabelUrl, Parcel."No.")) +
                 '"contentType": "pdf_uri",' +
                 strsubstno('"content": "%1",', RecordLink.URL1) +
-                '"source": "ShipCloud Direct Printing"' +
+                '"source": "ShipCloud Direct Printing",' +
+                //strsubstno('"rotate": %1', PrintNodePrinter.Rotate) +
+                strsubstno('"options": {"rotate": %1, "paper":"%2"}', PrintNodePrinter.Rotate, PrintNodePrinter.Paper) +
+        //'"qty": 2' +
         '}';
 
+        if ShipCloudSetup.Debug then
+            message(Json);
         if ShipCloudSetup.Debug then
             message(SEND_Request('POST', ShipCloudSetup."PrintNode URL", Json, ShipCloudSetup."PrintNode API Key"))
         else
             SEND_Request('POST', ShipCloudSetup."PrintNode URL", Json, ShipCloudSetup."PrintNode API Key");
         Parcel."No. of Printed" += 1;
         Parcel.modify(true);
+    end;
+
+    procedure GetPrinterParameter(PN_LabelPrinter: record "BC2SC_PrintNode Label Printer")
+    var
+        JSon: Text;
+    begin
+        ShipCloudSetup.get;
+        ShipCloudSetup.TestField("PrintNode API Key");
+        ShipCloudSetup.TestField("PrintNode URL");
+
+        if ShipCloudSetup.Debug then
+            message(SEND_Request('GET', strsubstno('%1/printers', ShipCloudSetup."PrintNode URL", PN_LabelPrinter."Printer ID"), Json, ShipCloudSetup."PrintNode API Key"))
+        else
+            SEND_Request('GET', strsubstno('%1/printers', ShipCloudSetup."PrintNode URL", PN_LabelPrinter."Printer ID"), Json, ShipCloudSetup."PrintNode API Key");
     end;
 
     local procedure SEND_Request(Type: Text; uri: Text; _queryObj: Text; pass: Text[50]) responseText: Text;

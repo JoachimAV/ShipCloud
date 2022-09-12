@@ -28,6 +28,10 @@ page 61000 "BC2SC_ShipCloud Setup"
                 {
                     ApplicationArea = All;
                 }
+                field("Use Sandbox"; Rec."Use Sandbox")
+                {
+                    ApplicationArea = All;
+                }
                 field(Debug; Rec.Debug)
                 {
                     ApplicationArea = All;
@@ -96,22 +100,22 @@ page 61000 "BC2SC_ShipCloud Setup"
     }
     actions
     {
-        area(Processing)
-        {
-            action(TestLabel)
-            {
-                ApplicationArea = All;
-                Caption = 'Print Test Label';
+        // area(Processing)
+        // {
+        //     action(TestLabel)
+        //     {
+        //         ApplicationArea = All;
+        //         Caption = 'Print Test Label';
 
-                trigger OnAction()
-                var
-                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
-                    Parcel: Record BC2SC_Parcel;
-                begin
-                    ShipCloudMgt.PrintPDFByPrintNode(Parcel);
-                end;
-            }
-        }
+        //         trigger OnAction()
+        //         var
+        //             ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+        //             Parcel: Record BC2SC_Parcel;
+        //         begin
+        //             ShipCloudMgt.PrintPDFByPrintNode(Parcel);
+        //         end;
+        //     }
+        // }
         area(Navigation)
         {
             Action(PrintNodeUser)
@@ -119,12 +123,14 @@ page 61000 "BC2SC_ShipCloud Setup"
                 Caption = 'PrintNode User Setup';
                 RunObject = page "BC2SC_PrintNode User Setup";
                 image = UserSetup;
+                ApplicationArea = All;
             }
             action(PrintNodePrinter)
             {
                 Caption = 'PrintNode Label Printer Setup';
                 RunObject = page "BC2SC_PrintNode Label Printer";
                 image = PrintCheck;
+                ApplicationArea = All;
             }
         }
     }

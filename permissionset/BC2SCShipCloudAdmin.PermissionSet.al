@@ -16,6 +16,10 @@ permissionset 61000 BC2SC_ShipCloudAdmin
         tabledata "BC2SC_ShipCloud Setup" = RMID,
         table "BC2SC_Transport Header" = X,
         tabledata "BC2SC_Transport Header" = RMID,
+        table "BC2SC_PrintNode Label Printer" = X,
+        tabledata "BC2SC_PrintNode Label Printer" = RMID,
+        table "BC2SC_PrintNode User Setup" = X,
+        tabledata "BC2SC_PrintNode User Setup" = RMID,
         codeunit "BC2SC_ShipCloud Management" = X,
         page "BC2SC_JsonBuffer Result" = X,
         page "BC2SC_Transport Lines" = X,
@@ -23,5 +27,8 @@ permissionset 61000 BC2SC_ShipCloudAdmin
         page "BC2SC_ShipCloud Setup" = X,
         page BC2SC_Packagings = X,
         page "BC2SC_Transport List" = X,
-        page "BC2SC_Transport Card" = X;
+        page "BC2SC_Transport Card" = X,
+        page "BC2SC_PrintNode Label Printer" = X,
+        page "BC2SC_PrintNode User Setup" = X,
+        page "BC2SC_Parcel Card" = X;
 }

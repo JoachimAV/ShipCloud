@@ -21,6 +21,16 @@ table 61006 "BC2SC_PrintNode Label Printer"
             Caption = 'Printer ID';
             DataClassification = ToBeClassified;
         }
+        field(5; Rotate; Integer)
+        {
+            Caption = 'Rotate';
+            MinValue = 0;
+            MaxValue = 360;
+        }
+        field(6; "Paper"; text[30])
+        {
+            Caption = 'Paper';
+        }
     }
     keys
     {

@@ -128,10 +128,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2641767735 - Field 3401177114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paper</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Paper - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2641767735 - Field 2628728933 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Printer ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Printer ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2641767735 - Field 3340817779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rotate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BC2SC_PrintNode Label Printer - Field Rotate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1186058773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>BC2SC_PrintNode User Setup</source>
@@ -608,6 +618,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_PrintNode Label Printer - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2641767735 - Action 2274355409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Printer Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_PrintNode Label Printer - Action GetPrinterSetup - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1186058773 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PrintNode User Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -667,11 +682,6 @@
           <source>PrintNode User Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Action PrintNodeUser - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3128493124 - Action 2132258788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Print Test Label</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_ShipCloud Setup - Action TestLabel - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3010349837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport Card</source>
@@ -787,6 +797,11 @@
           <source>Send Transports to Shipcloud (marked lines)?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action SendTransport - Method OnAction - NamedType ConfMsg002</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 4227435980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrintNode User Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action PrintNodeUser - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 801369431 - Action 2812113054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Print all Labels</source>
