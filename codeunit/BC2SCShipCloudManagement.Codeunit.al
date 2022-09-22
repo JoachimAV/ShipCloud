@@ -92,7 +92,9 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                             case TransportHeader."Source Document Type" of
                                 TransportHeader."Source Document Type"::"Sales Order":
                                     if SalesHeader.get(SalesHeader."Document Type"::Order, TransportHeader."Source Document No.") then begin
-                                        SalesHeader."Package Tracking No." := Parcel."Tracking No.";
+                                        SalesHeader.validate("Package Tracking No.", Parcel."Tracking No.");
+                                        Salesheader."Shipping Agent Code" := Transportheader."shipping Agent Code";
+                                        SalesHeader."Shipping Agent Service Code" := TransportHeader."Shipping Agent Service Code";
                                         SalesHeader.modify;
                                     end;
                             end;
@@ -985,11 +987,13 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                 strsubstno('"title": "%1",', Strsubstno(LblLabelUrl, Parcel."No.")) +
                 '"contentType": "pdf_uri",' +
                 strsubstno('"content": "%1",', RecordLink.URL1) +
-                '"source": "ShipCloud Direct Printing",' +
-                //strsubstno('"rotate": %1', PrintNodePrinter.Rotate) +
-                strsubstno('"options": {"rotate": %1, "paper":"%2"}', PrintNodePrinter.Rotate, PrintNodePrinter.Paper) +
+                '"source": "ShipCloud Direct Printing"';
+
+        //strsubstno('"rotate": %1', PrintNodePrinter.Rotate) +
+        if (PrintNodePrinter.Rotate <> 0) or (PrintNodePrinter.Paper <> '') then
+            Json += strsubstno(',"options": {"rotate": %1, "paper":"%2"}', PrintNodePrinter.Rotate, PrintNodePrinter.Paper);
         //'"qty": 2' +
-        '}';
+        Json += '}';
 
         if ShipCloudSetup.Debug then
             message(Json);
@@ -1010,9 +1014,64 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         ShipCloudSetup.TestField("PrintNode URL");
 
         if ShipCloudSetup.Debug then
-            message(SEND_Request('GET', strsubstno('%1/printers', ShipCloudSetup."PrintNode URL", PN_LabelPrinter."Printer ID"), Json, ShipCloudSetup."PrintNode API Key"))
+            message(SEND_Request('GET', strsubstno('https://api.printnode.com/printers', ShipCloudSetup."PrintNode URL", PN_LabelPrinter."Printer ID"), Json, ShipCloudSetup."PrintNode API Key"))
         else
-            SEND_Request('GET', strsubstno('%1/printers', ShipCloudSetup."PrintNode URL", PN_LabelPrinter."Printer ID"), Json, ShipCloudSetup."PrintNode API Key");
+            SEND_Request('GET', strsubstno('https://api.printnode.com/printers', ShipCloudSetup."PrintNode URL", PN_LabelPrinter."Printer ID"), Json, ShipCloudSetup."PrintNode API Key");
+    end;
+
+    procedure DownloadParcelsFromTransport(var TransportHeader: Record "BC2SC_Transport Header"): Boolean;
+    var
+        xClient: HttpClient;
+        RequestHeaders: HttpHeaders;
+        RequestContent: HttpContent;
+        ResponseMessage: HttpResponseMessage;
+        RequestMessage: HttpRequestMessage;
+        ResponseText: Text;
+        contentHeaders: HttpHeaders;
+        InStr: Instream;
+        os: OutStream;
+        is: InStream;
+        Base64Convert: Codeunit "Base64 Convert";
+        b64ApiKey: Text;
+        b: Boolean;
+        dm: codeunit "Data Compression";
+        Parcel: record BC2SC_Parcel;
+        RecordLink: Record "Record Link";
+        FileName: Text;
+        t: Text;
+        tempblobmgt: Codeunit "Temp Blob";
+        lt: list of [Text];
+    begin
+        FileName := 'Etiketten.zip';
+        TransportHeader.FindFirst();
+        dm.CreateZipArchive();
+        repeat
+            Parcel.setrange("Transport No.", TransportHeader."No.");
+            if Parcel.FindFirst() then
+                repeat
+                    RecordLink.setrange("Record ID", Parcel.RecordId);
+                    RecordLink.setrange(Description, Strsubstno(LblLabelUrl, Parcel."No."));
+                    if RecordLink.FindFirst() then
+                        repeat
+                            xClient.Get(RecordLink.URL1, ResponseMessage);
+                            ResponseMessage.Content.ReadAs(InStr);
+                            t := Parcel."No." + '.pdf';
+                            //DownloadFromStream(InStr, '', '', '', FileName);
+                            dm.AddEntry(InStr, t);
+                            clear(xClient);
+                            clear(InStr);
+                        until Recordlink.Next() = 0;
+                until Parcel.Next() = 0;
+        until TransportHeader.Next() = 0;
+
+        //message('%1', lt.Count());
+
+        tempblobmgt.CreateOutStream(os);
+        dm.SaveZipArchive(os);
+        //message('%1', tempblobmgt.Length());
+        is := tempblobmgt.CreateInStream();
+        DownloadFromStream(is, '', '', '', FileName);
+
     end;
 
     local procedure SEND_Request(Type: Text; uri: Text; _queryObj: Text; pass: Text[50]) responseText: Text;

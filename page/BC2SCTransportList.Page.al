@@ -149,6 +149,7 @@ page 61002 "BC2SC_Transport List"
                         TransportHeader.FindFirst();
                         repeat
                             ShipCloudMgt.SendTransport(TransportHeader);
+                            commit;
                         until TransportHeader.Next() = 0;
                     end;
                 end;
@@ -163,13 +164,18 @@ page 61002 "BC2SC_Transport List"
                     TransportHeader: record "BC2SC_Transport Header";
                     ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
                     ConfMsg003: label 'Cancel ShipCloud Transports (marked lines)?';
+                    d: Dialog;
                 begin
                     if Confirm(ConfMsg003, True) then begin
                         CurrPage.SetSelectionFilter(TransportHeader);
                         TransportHeader.FindFirst();
+                        d.open('#1###################');
                         repeat
+                            d.update(1, TransportHeader."No.");
                             ShipCloudMgt.CancelTransport(TransportHeader);
+                            commit;
                         until TransportHeader.Next() = 0;
+                        d.Close();
                     end;
                 end;
             }
@@ -199,12 +205,33 @@ page 61002 "BC2SC_Transport List"
                     end;
                 end;
             }
+
             Action(PrintNodeUser)
             {
                 Caption = 'PrintNode User Setup';
                 RunObject = page "BC2SC_PrintNode User Setup";
                 image = UserSetup;
                 ApplicationArea = All;
+            }
+            action(DownLoad)
+            {
+                ApplicationArea = All;
+                Caption = 'Download Labels';
+                ToolTip = 'Download labels for the selected transports to download folder';
+                Image = Download;
+                trigger OnAction()
+                var
+                    ShipCloudMgt: Codeunit "BC2SC_ShipCloud Management";
+                    TransportHeader: record "BC2SC_Transport Header";
+                    Parcel: record BC2SC_Parcel;
+                    Recordlink: record "Record Link";
+                    d: Dialog;
+                begin
+                    currpage.SetSelectionFilter(TransportHeader);
+                    ShipCloudMgt.DownloadParcelsFromTransport(TransportHeader);
+
+                    //d.close;
+                end;
             }
         }
     }
@@ -213,6 +240,7 @@ page 61002 "BC2SC_Transport List"
         NodePrintActivated: Boolean;
         lbl001: label 'Print all parcel labels for selected transports?';
         lbl002: label 'Printing Transport #1###############';
+        LblLabelUrl: Label 'Label URL Parcel %1';
 
     trigger OnOpenPage()
     begin

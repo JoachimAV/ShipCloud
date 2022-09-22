@@ -778,6 +778,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - NamedType lbl002</note>
         </trans-unit>
+        <trans-unit id="Page 801369431 - NamedType 1723079833" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Label URL Parcel %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - NamedType LblLabelUrl</note>
+        </trans-unit>
         <trans-unit id="Page 801369431 - Action 991176927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cancel Shipcloud Transports</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -797,6 +802,16 @@
           <source>Send Transports to Shipcloud (marked lines)?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action SendTransport - Method OnAction - NamedType ConfMsg002</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 37724400 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download labels for the selected transports to download folder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action DownLoad - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 801369431 - Action 37724400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download Labels</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BC2SC_Transport List - Action DownLoad - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 801369431 - Action 4227435980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>PrintNode User Setup</source>
