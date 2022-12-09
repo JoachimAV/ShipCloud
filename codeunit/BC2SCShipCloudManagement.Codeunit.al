@@ -13,6 +13,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         ShippingAgent: Record "Shipping Agent";
         TempJsonBuffer: Record "Json Buffer" Temporary;
         SalesHeader: Record "Sales Header";
+        ShippingAgentServices: Record "Shipping Agent Services";
         JsonString: Text;
         JsonResult: Text;
         LblTrackingCarrier: Label 'Carrier Tracking for parcel %1';
@@ -26,7 +27,7 @@ codeunit 61000 "BC2SC_ShipCloud Management"
         GetSetup();
         TransportHeader.TestField("Transport Document Type", TransportHeader."Transport Document Type"::Shipment);
         ShippingAgent.get(TransportHeader."Shipping Agent Code");
-
+        ShippingAgentServices.get(TransportHeader."shipping agent code", transportheader."Shipping Agent Service Code");
         Parcel.setrange("Transport No.", TransportHeader."No.");
         Parcel.FindFirst();
         repeat
@@ -50,7 +51,8 @@ codeunit 61000 "BC2SC_ShipCloud Management"
                     '"type": "parcel"' +
                 '},' +
                 StrSubstNo('"carrier": "%1",', ShippingAgent."BC2SC_Shipcloud Agent Name") +
-                StrSubstNo('"service": "%1",', TransportHeader."Shipping Agent Service Code") +
+                //StrSubstNo('"service": "%1",', TransportHeader."Shipping Agent Service Code") +
+                StrSubstNo('"service": "%1",', ShippingAgentServices.Description) +
                 StrSubstNo('"reference_number": "%1",', TransportHeader."Your Reference") +
                 StrSubstNo('"notification_email": "%1",', TransportHeader."Notification E-Mail") +
                 '"create_shipping_label": true' +
